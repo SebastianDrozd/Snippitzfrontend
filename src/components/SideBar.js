@@ -16,23 +16,23 @@ const SideBar = () => {
       
     }
     return (
-        <div className="category-container">
+        <div className="category-container" style={{padding: '1em'}}>
              <img
           src={process.env.PUBLIC_URL + `../images/pair.png`}
           width="150"
           height="100"
           alt="Image1"
-          style={{marginLeft: 20,paddingTop: 0,display: 'inline'}}
+          style={{marginLeft: 27,paddingTop: 0,display: 'inline'}}
           
         ></img>
         <br />
-        <br />
-            <h3  >Categories</h3>
+       
+            <h3 className="title" >Categories</h3>
 
             
             
             <br />
-            <h5>Languages: </h5>
+            <p className="langtitle">Languages: </p>
             <ul className="category-list">
                 <li onClick={handleClick} value="Java" className="category-item">Java</li>
                 <li onClick={handleClick} className="category-item">C++</li>
@@ -46,7 +46,7 @@ const SideBar = () => {
                 <li onClick={handleClick} className="category-item">Raspberry Pi</li>
             </ul>
 
-            <h5>Type: </h5>
+            <p className="langtitle">Type </p>
             <ul className="category-list">
                 <li onClick={handleClick} value="Java" className="category-item"> <i style={{display:'inline'}}class="fa fa-database" aria-hidden="true"></i>Database</li>
                 <li onClick={handleClick} className="category-item">Api</li>

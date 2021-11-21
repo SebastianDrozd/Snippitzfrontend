@@ -35,39 +35,32 @@ const Post = ({ title, language, description, createdAt, id,likes,author }) => {
   }
 
   return (
-    <div class="card animate__animated animate__flipInX">
-      <div class="card-body">
-      
-        <h5 class="card-title">{title}<span> <i style={{float : 'right'}} class="fa fa-heart-o" aria-hidden="true"> {likes}</i></span></h5>
-        <h6 class="card-subtitle mb-2 text-muted">{language}</h6>
-        <br />
-        <p class="card-text">{description}</p>
-
-        <img
-          src={process.env.PUBLIC_URL + `./images/${pictureString}`}
-          width="75"
-          height="65"
-          alt="Image1"
-          style={{marginLeft: 55}}
-        ></img>
-        <br />
-        <br />
-       
-        <img
-        style={{marginLeft: 20}}
-          src={process.env.PUBLIC_URL + `./images/0star.png`}
-          width="150"
-          height="40"
-          alt="Image1"
-        ></img>
-        <br />
-        <br />
-        <p>Author: {author}</p>
-        <Link to={`/posts/${id}`}>View post</Link>
-      <br />
-      <br />
-        <p>date: {moment(createdAt).fromNow()}</p>
-      </div>
+    <div className=" animate__animated animate__flipInX" >
+     <div className="blog-card" style={{maxHeight: '18em', minHeight: '18em'}}>
+    <div className="meta">
+      <div className="photo" style={{backgroundImage: `url("./images/${pictureString}")`}}></div>
+      <ul className="details">
+        <li className="author"><a href="#">{author}</a></li>
+        <li className="date">{moment(createdAt).fromNow()}</li>
+        <li className="tags">
+          <ul>
+            <li><a href="#">Learn</a></li>
+            <li><a href="#">Code</a></li>
+            <li><a href="#">HTML</a></li>
+            <li><a href="#">CSS</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div className="description">
+      <h1>{title}</h1>
+      <h2>{language}</h2>
+      <p> {description}</p>
+      <p className="read-more">
+        <a href="#"><Link to={`/posts/${id}`}>View post</Link></a> 
+      </p>
+    </div>
+  </div>
     </div>
   );
 };

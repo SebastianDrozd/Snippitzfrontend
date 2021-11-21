@@ -38,3 +38,12 @@ export const likePost = (id) => {
     console.log()
     return axios.get(`http://localhost:8080/api/posts/${id}/like`)
 }
+
+export const deletePost= (id) =>{
+    console.log("this is id",id.id)
+    return axios.delete(`http://localhost:8080/api/posts/${id.id}`)
+}
+export const updatePost = (id,post) => {
+    console.log('sending this', post)
+    return axios.put(`http://localhost:8080/api/posts/${id}`,post).then(reponse => console.log(reponse))
+}

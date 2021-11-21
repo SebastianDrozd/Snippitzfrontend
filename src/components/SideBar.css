@@ -1,20 +1,33 @@
 .category-container{
     padding-top: 3em;
-    border-right: 1px solid black;
+    border-right: 1px solid #e2e5ff;
     height: 100%;
     padding-right: 10em;
 }
 
 .category-list{
     list-style: none;
-    color: #5863F8;
+    
+    
+}
+.langtitle{
+    box-shadow: 0 4px 7px 3px rgba(0, 0, 0, 0.1);
+    padding: .5em;
+}
+.title{
+    text-align: center;
+    font-weight: bold;
+    color: #5664fd;
+    box-shadow: 0 4px 7px -1px rgba(0, 0, 0, 0.1);
 }
 
 .category-item{
     padding: .5em;
-    width: 5em;
+    min-width: 8em;
+    box-shadow: 0 4px 7px 3px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
 }
 .category-item:hover{
-    border-bottom: 1px solid black;
+    background-color:  #dde0ff;
 
 }

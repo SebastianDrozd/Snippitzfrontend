@@ -22,9 +22,6 @@ export const PostListView = ({ posts }) => {
       <div className="create-post">
         <br />
         <br />
-      
-       
-        
 
         {loggedIn == true ? <button style={{float: 'right'}} onClick={handleLogout}>Logout</button> : ""}
         <br />
@@ -56,7 +53,7 @@ export const PostListView = ({ posts }) => {
           Most popular posts
         </h3>
         {loggedIn == true ? (
-          <Link style={{ float: "right", padding: 20, borderRadius: 20, border: '1px solid slateblue' }} to="/create">
+          <Link style={{ color: 'white',float: "right", padding: 20, borderRadius: 20, border: '1px solid slateblue' ,backgroundColor: '#5863F8'}} to="/create">
             Create Post
           </Link>
         ) : (
@@ -81,10 +78,10 @@ export const PostListView = ({ posts }) => {
         style={{ marginLeft: "2em", paddingTop: "3em" }}
         class="container-fluid"
       >
-        <div class="row row-items">
+        <div class="row " style={{justifyContent:'space-evenly'}}>
           {posts &&
             posts.map((post) => (
-              <div class="col-3" style={{ marginLeft: 10, marginTop: 20 }}>
+              <div class="col-5" style={{ marginLeft: 0, marginTop: 20 }}>
                 <Post
                   title={post.title}
                   language={post.language}

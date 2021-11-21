@@ -9,12 +9,13 @@ const CreatePostContent = () => {
     const [code, setCode] = useState("")
 
     const handleSubmit = () => {
-        savePost({title: title, description: description, language: language, createdAt: Date.now(),author: localStorage.getItem("username")})
+        savePost({title: title, description: description, language: language, createdAt: Date.now(),author: localStorage.getItem("username"),code : code})
     }
     return (
-        <div className="content">
+        <div className="content " >
+          <br />
                <h1 className="title">Create Post</h1>
-               <form class="row g-3">
+               <form class="row g-">
   <div class="col-md-6">
     <label for="inputEmail4" class="form-label">Title</label>
     <input onChange={(e) => SetTitle(e.target.value)} class="form-control" id="inputEmail4"/>

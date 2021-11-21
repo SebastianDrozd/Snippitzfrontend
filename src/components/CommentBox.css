@@ -1,13 +1,18 @@
 html, body {
   
-  font-family: "PT Sans", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
-  color: #555f77;
-  -webkit-font-smoothing: antialiased;
+  
 }
-
+.sub-button{
+  padding: 1em;
+  border-radius: 20px;
+  background-color: #5863F8;
+  color: white;
+  border-color: white;
+}
 input, textarea {
   outline: none;
-  border: none;
+  border: 1px solid #bbcfdd;
+  border-radius: 10px;
   display: block;
   margin: 0;
   padding: 0;
