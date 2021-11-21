@@ -1,0 +1,20 @@
+.category-container{
+    padding-top: 3em;
+    border-right: 1px solid black;
+    height: 100%;
+    padding-right: 10em;
+}
+
+.category-list{
+    list-style: none;
+    color: #5863F8;
+}
+
+.category-item{
+    padding: .5em;
+    width: 5em;
+}
+.category-item:hover{
+    border-bottom: 1px solid black;
+
+}

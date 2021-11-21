@@ -1,0 +1,9 @@
+.content{
+    padding: 3rem;
+    border: 1px solid slateblue;
+    border-radius: 40px 80px;
+    border: 2px solid #bbbfff;;
+    box-shadow: 10px 10px 60px rgb(0 0 0 / 0.2);
+    margin-left: 6em;
+    
+}

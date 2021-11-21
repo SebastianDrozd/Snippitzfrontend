@@ -1,0 +1,17 @@
+
+.nav-links{
+    list-style-type: none;
+    display: flex;
+    color: white;
+    padding-right: 39;
+}
+.navbar{
+    padding-top: 0em !important;
+}
+.link-item{
+    padding: .5em;
+    padding-top: 2em;
+}
+.link-item:hover{
+    border-bottom: 1px solid black;
+}
