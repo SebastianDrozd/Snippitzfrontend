@@ -21,8 +21,9 @@ function App() {
           <Route exact path="/" element={<Home/>}/>
           <Route exact path="/home" element={<Home/>}/>
           <Route path="/projects" element={<PostView/>}/>
+          <Route path="/projects/:id" element={<PostPage/>}/>
           <Route path="/create" element={<CreatePost/>}/>
-          <Route path="/posts/:id" element={<PostPage/>}/>
+         
           <Route path="/login" element={<LoginPage />}/>
           <Route path="/signup" element={<Signup/>}/>
         </Routes>

@@ -4,12 +4,12 @@ import Pagination from "./Pagination";
 import Post from "./Post";
 
 import "./PostListView.css";
+import SearchBar from "./SearchBar";
 export const PostListView = ({ posts }) => {
   const [loggedIn, setLoggedIn] = useState(false);
   useEffect(() => {
     console.log("whats inside localstorage", localStorage.getItem("loggedIn"));
     const result = localStorage.getItem("loggedIn");
-    console.log(result);
     setLoggedIn(JSON.parse(result));
     console.log(loggedIn);
   }, []);
@@ -23,37 +23,49 @@ export const PostListView = ({ posts }) => {
         <br />
         <br />
 
-        {loggedIn == true ? <button style={{float: 'right'}} onClick={handleLogout}>Logout</button> : ""}
-        <br />
-        <div style={{padding: "4em", backgroundColor: '#5863F8', marginLeft: 50, border: '1px solid white', borderRadius: '30px'}}>
-          <h1 style={{color: 'white', textAlign: 'center',fontStyle: 'bold',fontWeight: 'bold'}}>All your favorite snipits in one place!</h1>
-        </div>
-        <br />
         
-        <div class="input-group mb-2" style={{ marginLeft: 60 }}>
-          <input
-            type="text"
-            class="form-control"
-            aria-label="Text input with dropdown button"
-          />
-          <button
-            class="btn btn-outline-secondary dropdown-toggle"
-            type="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-            style={{color: '#bbbfff'}}
+        <br />
+        <div
+          style={{
+            padding: "3.5em",
+            backgroundColor: "#5863F8",
+            marginLeft: 100,
+            border: "1px solid white",
+            borderRadius: "50px",
+          }}
+        >
+          <h1
+            style={{
+              color: "white",
+              textAlign: "center",
+              fontStyle: "bold",
+              fontWeight: "bold",
+            }}
           >
-            Dropdown
-          </button>
-          
+            View, share, edit, and create all in one place
+          </h1>
         </div>
         <br />
-        
-        <h3 style={{ display: "inline", paddingLeft: 70 }}>
+              <br />
+      <SearchBar/>
+        <br />
+            <br />
+            <br />
+        <h3 style={{ display: "inline", paddingLeft: 70, color: "#5863F8",fontWeight: 'bold' }}>
           Most popular posts
         </h3>
         {loggedIn == true ? (
-          <Link style={{ color: 'white',float: "right", padding: 20, borderRadius: 20, border: '1px solid slateblue' ,backgroundColor: '#5863F8'}} to="/create">
+          <Link
+            style={{
+              color: "white",
+              float: "right",
+              padding: 20,
+              borderRadius: 20,
+              border: "1px solid slateblue",
+              backgroundColor: "#5863F8",
+            }}
+            to="/create"
+          >
             Create Post
           </Link>
         ) : (
@@ -67,18 +79,17 @@ export const PostListView = ({ posts }) => {
         <br />
         <br />
         <p style={{ paddingLeft: 70, display: "inline" }}>Sort by </p>
-        <select style={{display: 'inline'}} id="cars">
+        <select style={{ display: "inline" }} id="cars">
           <option value="volvo">Popularity</option>
           <option value="saab">Date Created</option>
         </select>
-       
       </div>
-     
+
       <div
-        style={{ marginLeft: "2em", paddingTop: "3em" }}
+        style={{ marginLeft: "2em", paddingTop: "1em" }}
         class="container-fluid"
       >
-        <div class="row " style={{justifyContent:'space-evenly'}}>
+        <div class="row " style={{ justifyContent: "space-evenly" }}>
           {posts &&
             posts.map((post) => (
               <div class="col-5" style={{ marginLeft: 0, marginTop: 20 }}>
@@ -88,8 +99,8 @@ export const PostListView = ({ posts }) => {
                   description={post.description}
                   createdAt={post.createdAt}
                   id={post.id}
-                  likes = {post.likes}
-                  author= {post.author}
+                  likes={post.likes}
+                  author={post.author}
                 ></Post>
               </div>
             ))}

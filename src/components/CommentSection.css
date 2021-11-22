@@ -11,6 +11,9 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
+.comments-section{
+   margin-left: 7em !important;
+}
 
 a {
     color: #03658c;

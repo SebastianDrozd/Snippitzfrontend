@@ -3,6 +3,7 @@ import { getPostsByType } from './connections/Requests'
 import './SideBar.css'
 import { useSelector, useDispatch } from 'react-redux'
 import { setPosts } from '../redux/slices/postSlice'
+import SearchBar from './SearchBar'
 const SideBar = () => {
     const dispatch = useDispatch()  
     const handleClick = (e) => {
@@ -32,6 +33,7 @@ const SideBar = () => {
             
             
             <br />
+            
             <p className="langtitle">Languages: </p>
             <ul className="category-list">
                 <li onClick={handleClick} value="Java" className="category-item">Java</li>

@@ -57,7 +57,7 @@ const Post = ({ title, language, description, createdAt, id,likes,author }) => {
       <h2>{language}</h2>
       <p> {description}</p>
       <p className="read-more">
-        <a href="#"><Link to={`/posts/${id}`}>View post</Link></a> 
+        <a href="#"><Link to={`/projects/${id}`}>View post</Link></a> 
       </p>
     </div>
   </div>

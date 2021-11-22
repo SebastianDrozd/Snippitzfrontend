@@ -6,7 +6,8 @@ import './SinglePost.css'
 import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import CommentBox from './CommentBox'
-import {  useNavigate } from "react-router-dom";
+import {  Link, useNavigate } from "react-router-dom";
+import moment from 'moment'
 const SinglePost = () => {
   let navigate = useNavigate();
    const codeString = `import SyntaxHighlighter from 'react-syntax-highlighter';
@@ -100,6 +101,7 @@ const SinglePost = () => {
   </div>
 </div>
             <br />
+            
            
             <br />
           
@@ -110,35 +112,54 @@ const SinglePost = () => {
             aria-label="Text input with dropdown button"
           />
           <button
-            class="btn btn-outline-secondary dropdown-toggle"
+            class="btn btn-outline-secondary "
             type="button"
             data-bs-toggle="dropdown"
             aria-expanded="false"
             style={{color: '#bbbfff'}}
           >
-            Dropdown
+            Search
           </button>
-          
+          <Link
+            style={{
+              color: "white",
+              float: "right",
+              padding: 20,
+              borderRadius: 20,
+              border: "1px solid slateblue",
+              backgroundColor: "#5863F8",
+              marginLeft: 10
+            }}
+            to="/create"
+          >
+            Create Post
+          </Link>
         </div>
-          <br />
-          <br />
+        
             <div className="content">
             
+          
+            
         <div style={{display: 'flex'}}>
-            <div style={{width: '50%'}}> 
-                <h3 style={{borderBottom: '1px solid grey',padding: 10}}>{post.title}</h3>
+            <div style={{width: '45%'}}> 
+                <h3 style={{borderBottom: '1px solid grey',padding: 10, fontWeight: 'bold'}}>{post.title}</h3>
                 <br />
                 <br />
+                <div className="wrap">
                 <h3><i class="fa fa-code" aria-hidden="true"></i></h3>
-                <h4 style={{opacity : '0.7', display : 'inline'}}>{post.language}</h4><h4 style={{display: 'inline', marginLeft: '8em', opacity: '0.7'}}>7 <i style={{color: 'slateblue'}} className="fa fa-heart"></i></h4>
+                <h4 style={{opacity : '0.7', display : 'inline'}}>{post.language}</h4><h4 style={{display: 'inline', marginLeft: '4em', opacity: '0.7'}}>7 <i style={{color: 'slateblue'}} className="fa fa-heart"></i></h4>
+                <br />
+                </div>
                 <br />
                 <br />
-                <br />
+                <div className="wrap">
                 <h3><i class="fa fa-user" aria-hidden="true"></i></h3>
-                <h4 style={{opacity : '0.7'}}>{post.author}</h4>
+                <h5 style={{opacity : '0.7',display: 'inline'}}>{post.author} </h5><h5 style={{display: 'inline',marginLeft:'1em',marginRight:10,opacity : '0.7'}}>{moment(post.createdAt).fromNow()}<i class="fa fa-clock-o" aria-hidden="true"></i></h5>
+                <br />
+                </div>
                 <br />
                 <br />
-                <br />
+                
                 <h5>Description</h5>
                 <p style={{opacity : '0.7'}}>{post.description}</p>
                 <br />
@@ -146,11 +167,11 @@ const SinglePost = () => {
                 <p style={{opacity : '0.7'}}>maven, react-redux</p>
                 <br></br>
                 
-                
+                <hr />
                 <br></br>
                 <br/>
                 </div>
-            <div style={{width: '50%'}}><img
+            <div style={{width: '55%'}}><img
           src={process.env.PUBLIC_URL + `../images/22.png`}
           width="350"
           height="400"
@@ -163,7 +184,7 @@ const SinglePost = () => {
           width="225"
           height="200"
           alt="Image1"
-          style={{marginLeft: 50,paddingTop: 20}}
+          style={{marginLeft: 50,paddingTop: 10}}
           
         ></img>
        </div>
@@ -172,7 +193,7 @@ const SinglePost = () => {
       {post.code}
     </SyntaxHighlighter>}
                 
-    {username == post.author ? <div ><button type="button" class="btn btn-success"  data-bs-toggle="modal" data-bs-target="#exampleModal"style={{marginRight:"1em"}}>Edit</button>
+    {loggedIn && username == post.author ? <div ><button type="button" class="btn btn-success"  data-bs-toggle="modal" data-bs-target="#exampleModal"style={{marginRight:"1em"}}>Edit</button>
    
     <button onClick={handleDeletePost} type="button" class="btn btn-danger">Delete</button></div> : ""}
     
