@@ -37,11 +37,15 @@ const Post = ({
       break;
     case "HTML/CSS":
       pictureString = "htmlcss.jpg";
+      break;
     case "Python":
       pictureString = "python.png";
       break;
     case "Swift":
       pictureString = "swift.png";
+      break;
+    default: 
+      pictureString = "swift.png"
   }
 
   const handleEditPost = () => {

@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from "react";
-import {  useParams } from "react-router";
+import { useParams } from "react-router";
 import CommentSection from "./CommentSection";
 import {
   deletePost,
   getAllComments,
-
   getPost,
-  likePost,
-  postComment,
   updatePost,
 } from "./connections/Requests";
 import "./SinglePost.css";
@@ -16,50 +13,30 @@ import SyntaxHighlighter from "react-syntax-highlighter";
 
 import { Link, useNavigate } from "react-router-dom";
 import moment from "moment";
-import { useSelector,useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { setComments } from "../redux/slices/postSlice";
 const SinglePost = () => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   let navigate = useNavigate();
-  const comments = useSelector(state => state.posts.comments)
+  const comments = useSelector((state) => state.posts.comments);
   const [post, setPost] = useState({});
   const id = useParams();
-  const [comment, setComment] = useState("");
+
   const [description, setDescription] = useState("");
   const [code, setCode] = useState("");
-  const username = useSelector(state => state.user.username)
-  const loggedIn = useSelector(state => state.user.loggedIn)
+  const username = useSelector((state) => state.user.username);
+  const loggedIn = useSelector((state) => state.user.loggedIn);
   useEffect(() => {
     getPost(id.id).then((response) => {
-    
       setPost(response.data);
       setCode(response.data.code);
       setDescription(response.data.description);
     });
 
     getAllComments(id).then((response) => {
-      dispatch(setComments(response.data))
-     
-     
+      dispatch(setComments(response.data));
     });
-  }, []);
-
-  const handleSumbit = () => {
-    postComment(
-      {
-        commentMessage: comment,
-        dateCreated: Date.now(),
-        snipUser: localStorage.getItem("username"),
-      },
-      id.id
-    );
-  };
-
-  const handleLikePost = () => {
-    likePost(id.id).then((response) => {
-      console.log(response);
-    });
-  };
+  }, [dispatch, id]);
 
   const handleDeletePost = () => {
     deletePost(id).then(() => {
@@ -265,7 +242,7 @@ const SinglePost = () => {
           </SyntaxHighlighter>
         )}
 
-        {loggedIn && username == post.author ? (
+        {loggedIn && username === post.author ? (
           <div>
             <button
               type="button"
