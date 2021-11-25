@@ -1,32 +1,31 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { setPosts } from "../redux/slices/postSlice";
+import { getAllPosts } from "./connections/Requests";
 import Pagination from "./Pagination";
 import Post from "./Post";
 
 import "./PostListView.css";
 import SearchBar from "./SearchBar";
 export const PostListView = ({ posts }) => {
-  const [loggedIn, setLoggedIn] = useState(false);
+  const dispatch = useDispatch();
+  const loggedIn = useSelector((state) => state.user.loggedIn);
+  const sortChoice = useSelector((state) => state.posts.sortChoice);
   useEffect(() => {
-    console.log("whats inside localstorage", localStorage.getItem("loggedIn"));
-    const result = localStorage.getItem("loggedIn");
-    setLoggedIn(JSON.parse(result));
-    console.log(loggedIn);
-  }, []);
-  const handleLogout = () => {
-    setLoggedIn(!loggedIn);
-    localStorage.setItem("loggedIn", false);
-  };
+    getAllPosts().then((response) => {
+      dispatch(setPosts(response.data));
+    });
+  }, [dispatch]);
   return (
     <div>
       <div className="create-post">
         <br />
         <br />
-
-        
         <br />
-        <div
+        <div className=" animate__backInRight"
           style={{
+            boxShadow: "0 3px 7px 2px rgba(0, 0, 0, 0.1)",
             padding: "3.5em",
             backgroundColor: "#5863F8",
             marginLeft: 100,
@@ -46,15 +45,22 @@ export const PostListView = ({ posts }) => {
           </h1>
         </div>
         <br />
-              <br />
-      <SearchBar/>
         <br />
-            <br />
-            <br />
-        <h3 style={{ display: "inline", paddingLeft: 70, color: "#5863F8",fontWeight: 'bold' }}>
+        <SearchBar />
+        <br />
+        <br />
+        <br />
+        <h3
+          style={{
+            display: "inline",
+            paddingLeft: 70,
+            color: "#5863F8",
+            fontWeight: "bold",
+          }}
+        >
           Most popular posts
         </h3>
-        {loggedIn == true ? (
+        {loggedIn === true ? (
           <Link
             style={{
               color: "white",
@@ -89,7 +95,15 @@ export const PostListView = ({ posts }) => {
         style={{ marginLeft: "2em", paddingTop: "1em" }}
         class="container-fluid"
       >
+        {sortChoice}
         <div class="row " style={{ justifyContent: "space-evenly" }}>
+          {posts.length === 0 ? (
+            <h3 style={{ textAlign: "center" }}>
+              There are no posts to display{" "}
+            </h3>
+          ) : (
+            ""
+          )}
           {posts &&
             posts.map((post) => (
               <div class="col-5" style={{ marginLeft: 0, marginTop: 20 }}>

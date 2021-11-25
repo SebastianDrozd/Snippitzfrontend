@@ -1,18 +1,31 @@
 import React, { useState } from "react";
+import { useSelector ,useDispatch} from "react-redux";
+import { useParams } from "react-router";
+import { setComments } from "../redux/slices/postSlice";
 import "./CommentBox.css";
-import { postComment } from "./connections/Requests";
+import { getAllComments2, postComment } from "./connections/Requests";
 const CommentBox = ({ id }) => {
+  
+  const dispatch = useDispatch()
   // {loggedIn == true? <div> <textarea onChange={(e) => {setComment(e.target.value)}} id="inputAddress" name="inputAddress" rows="4" cols="50" /> <button onClick={handleSumbit}>post comment</button></div> : ""}
   const [comment, setComment] = useState("");
+  const username = useSelector(state => state.user.username)
   const handleSumbit = () => {
     postComment(
       {
         commentMessage: comment,
         dateCreated: Date.now(),
-        snipUser: localStorage.getItem("username"),
+        snipUser: username,
       },
       id
-    );
+    ).then(reponse => {
+      console.log("id ====", id)
+      getAllComments2(id).then((response) => {
+        dispatch(setComments(response.data))
+       
+       
+      });
+    });
   };
   return (
     <div>

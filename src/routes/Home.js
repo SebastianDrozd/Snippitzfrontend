@@ -14,7 +14,7 @@ const Home = () => {
               <h3 style={{color : "#5863F8", fontWeight: 50}}>In one place!</h3>
               <br />
               <br />
-              <button type="button" class="btn btn-outline-info"><Link to="/projects">Sign up</Link></button> <button style={{backgroundColor: ' #5863F8 ', color: 'white !important'}} type="button" class="btn btn-outline-info"><Link style={{color: 'white', fontStyle: 'bold'}} to="/projects">View Snippitz</Link></button>
+              <button type="button" class="btn btn-outline-info"><Link to="/signup">Sign up</Link></button> <button style={{backgroundColor: ' #5863F8 ', color: 'white !important'}} type="button" class="btn btn-outline-info"><Link style={{color: 'white', fontStyle: 'bold'}} to="/home">View Snippitz</Link></button>
               </div>
           </div>
           <div class="col-6" style={{paddingTop: 60}}> <img

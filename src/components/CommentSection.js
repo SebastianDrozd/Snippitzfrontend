@@ -1,15 +1,11 @@
-import moment from "moment";
-import React, { useState, useEffect } from "react";
+
+import React from "react";
 import CommentBox from "./CommentBox";
 import "./CommentSection.css";
 import Comment from "./Comment";
+import { useSelector } from "react-redux";
 const CommentSection = ({ comments, id }) => {
-  const [loggedIn, setLoggedIn] = useState(
-    JSON.parse(localStorage.getItem("loggedIn"))
-  );
-  useEffect(() => {
-    console.log(loggedIn);
-  }, []);
+  const loggedIn = useSelector(state => state.user.loggedIn)
   return (
     <div>
       <div className="comments-container">
@@ -19,7 +15,7 @@ const CommentSection = ({ comments, id }) => {
           <option value="volvo">Popularity</option>
           <option value="saab">Date Created</option>
         </select>
-        {loggedIn == true ? <CommentBox id={id} /> : ""}
+        {loggedIn === true ? <CommentBox id={id} /> : ""}
 
         <ul id="comments-list" className="comments-list">
           {comments && comments.map((comment) => <Comment comment={comment} />)}

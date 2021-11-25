@@ -1,27 +1,36 @@
-import React,{useState,useEffect} from 'react'
+import React,{useState} from 'react'
+import { useSelector } from 'react-redux'
 import { savePost } from './connections/Requests'
 import './CreatePostContent.css'
-
+import Swal from 'sweetalert2'
+import { useNavigate } from 'react-router'
 const CreatePostContent = () => {
+  let navigate = useNavigate();
+   const user = useSelector(state => state.user.username)
     const [title,SetTitle] = useState("")
     const [language,setLanguage] = useState("")
     const [description, setDescription] = useState("")
     const [code, setCode] = useState("")
 
     const handleSubmit = () => {
-        savePost({title: title, description: description, language: language, createdAt: Date.now(),author: localStorage.getItem("username"),code : code})
+        savePost({title: title, description: description, language: language, createdAt: Date.now(),author: user,code : code})
+        Swal.fire({
+          title: 'Post created!',
+          text: 'Your post is now public!',
+          icon: 'success',
+          confirmButtonText: 'Sweet!'
+        })
+        navigate('/home')
     }
     return (
         <div className="content " >
           <br />
                <h1 className="title">Create Post</h1>
                <form class="row g-">
-  <div class="col-md-6">
+  <div class="col-md-4">
     <label for="inputEmail4" class="form-label">Title</label>
     <input onChange={(e) => SetTitle(e.target.value)} class="form-control" id="inputEmail4"/>
-    <p>{title}</p>
   </div>
-  
     <label for="inputPassword4" class="form-label">Language</label>
     <div class="col-md-4">
     <select onChange={(e) => {
@@ -45,18 +54,17 @@ const CreatePostContent = () => {
     </select>
   </div>
     
-    <p>{language}</p>
   
   <div class="col-12">
     <p>Description</p>
-    <textarea  onChange={(e) => {setDescription(e.target.value)}} id="inputAddress" name="inputAddress" rows="4" cols="100" />
-    <p>{description}</p>
+    <textarea  onChange={(e) => {setDescription(e.target.value)}} id="inputAddress" name="inputAddress" rows="4" cols="70" />
+
 
   </div>
   <div class="col-12">
-    <p>Code</p>
-    <textarea  onChange={(e) => {setCode(e.target.value)}} id="inputAddress" name="inputAddress" rows="4" cols="100" />
-    <p>{code}</p>
+    <p>Code <i class="fa fa-code" aria-hidden="true"></i></p>
+    <textarea  onChange={(e) => {setCode(e.target.value)}} id="inputAddress" name="inputAddress" rows="4" cols="70" />
+
   </div>
  
  

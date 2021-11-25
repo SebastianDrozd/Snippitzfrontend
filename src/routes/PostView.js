@@ -8,10 +8,10 @@ import { setPosts } from "../redux/slices/postSlice";
 const PostView = () => {
   const dispatch = useDispatch()  
   const post2 = useSelector((state) => state.posts.posts)
-    const [posts, setPostss] = useState([])
+   
     useEffect(() => {
         getAllPosts().then((response) => {
-          console.log(response.data)
+          
             dispatch(setPosts(response.data))
           
             //console.log(posts)
