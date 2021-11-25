@@ -1,0 +1,12 @@
+.header-main{
+    background-position: center center;
+   
+    background-repeat: no-repeat;
+    height:100vh;
+   
+    background-image:   url("https://elements-cover-images-0.imgix.net/790945c8-90f0-4ac9-b551-06fa26d4f597?auto=compress%2Cformat&fit=max&w=900&s=21c679857c8dc9aa65cfc280e0cd5dce");
+  }
+
+  .title10{
+      color: #58f8c8;
+  }

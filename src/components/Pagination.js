@@ -1,6 +1,10 @@
 import React from 'react'
+
 import './Pagination.css'
 const Pagination = () => {
+  //const [currentPage, setCurrentPage] = useState(0);
+  //const posts = useSelector(state => state.posts.posts)
+//  Array.apply(null, Array(5)).map(function () {})
     return (
         <div>
             <div class="pagination-wrapper" style={{paddingLeft:70}}>

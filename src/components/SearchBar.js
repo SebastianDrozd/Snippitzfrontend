@@ -2,7 +2,7 @@ import React from 'react'
 
 const SearchBar = () => {
     return (
-        <div>
+        <div style={{display: 'inline'}}>
               <div class="input-group " style={{ width: '40%', float: 'right',marginBottom: '2em' }}>
           <input
             type="text"

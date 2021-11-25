@@ -10,8 +10,8 @@ const LoginPage = () => {
   const [password, setPassword] = useState("")
 
  const handleLogin = () => {
-    loginUser({snipUsername: username,snipPassword: password}).
-    then(response => {
+    loginUser({snipUsername: username,snipPassword: password})
+    .then(response => {
       console.log("response",response)
       var token = response.headers.authorization.substring(7);
       var username = response.data.snipUsername

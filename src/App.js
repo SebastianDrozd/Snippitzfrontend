@@ -14,6 +14,7 @@ import { verifyToken } from "./components/connections/Requests";
 import { useSelector } from "react-redux";
 import { setUserStatus } from "./redux/slices/userSlice";
 import MyPosts from "./routes/MyPosts";
+import Header from "./components/Header";
 function App() {
   const dispatch = useDispatch()  
   const post2 = useSelector((state) => state.posts.posts)
@@ -37,6 +38,8 @@ function App() {
     <>
     <Router>
       <NavigationBar />
+      <Header/>
+    
       <div class="container-fluid">
         <div class="row">
           <div class="col-2">
