@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import Banner from '../components/Banner'
 import Post from '../components/Post'
 
 const MyPosts = () => {
@@ -8,36 +9,17 @@ const MyPosts = () => {
     const userPosts = posts.filter(post => post.author === username)
     return (
         <div>
-            <br></br>
-         
-            <br/>
-            <br/>
-            <div
-          style={{
-            padding: "3.5em",
-            backgroundColor: "#5863F8",
-            marginLeft: 100,
-            border: "1px solid white",
-            borderRadius: "50px",
-          }}
-        >
-          <h1
-            style={{
-              color: "white",
-              textAlign: "center",
-              fontStyle: "bold",
-              fontWeight: "bold",
-            }}
-          >
-           My Posts
-          </h1>
-        </div>
+          <br />
+            <Banner title="My Posts" /> 
+          
+          <br />
+          <br />
         <div className="posts_container">
         <div class="row " style={{ justifyContent: "space-evenly" }}>
             {userPosts.length === 0 && <h1 style={{textAlign: 'center'}}>You currently have no posts</h1>}
           {userPosts &&
             userPosts.map((post) => (
-              <div class="col-5" style={{ marginLeft: 0, marginTop: 20 }}>
+              <div class="col-4" style={{ marginLeft: 0, marginTop: 20 }}>
                   
                 <Post
                   title={post.title}

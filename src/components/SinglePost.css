@@ -5,9 +5,13 @@
     border: 2px solid #bbbfff;;
     box-shadow: 10px 10px 60px rgb(0 0 0 / 0.2);
     margin-left: 5em !important;
-    width: 80% !important;
+    width: 70% !important;
     margin-left: 10em !important;
     
+}
+.headr-color{
+    height: 100px;
+    background-color: turquoise;
 }
 .wrap{
     box-shadow: 0 3px 7px 2px rgba(0, 0, 0, 0.1);

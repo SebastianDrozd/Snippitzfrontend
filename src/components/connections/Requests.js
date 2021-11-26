@@ -74,3 +74,7 @@ export const updateComment = (id,comment) => {
 export const deleteComment = (id) => {
     return axios.delete(`http://localhost:8080/api/comments/${id}`)
 }
+export const requestPageAble= (pageNumber) => {
+    console.log("this is page number", pageNumber)
+    return axios.get(`http://localhost:8080/api/posts/query?pageSize=12&pageNo=${pageNumber}`)
+}

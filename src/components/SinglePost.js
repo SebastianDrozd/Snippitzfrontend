@@ -10,11 +10,12 @@ import {
 import "./SinglePost.css";
 import { docco } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import SyntaxHighlighter from "react-syntax-highlighter";
-
+import Swal from 'sweetalert2'
 import { Link, useNavigate } from "react-router-dom";
 import moment from "moment";
 import { useSelector, useDispatch } from "react-redux";
 import { setComments } from "../redux/slices/postSlice";
+import Banner from "./Banner";
 const SinglePost = () => {
   const dispatch = useDispatch();
   let navigate = useNavigate();
@@ -39,12 +40,34 @@ const SinglePost = () => {
   }, [dispatch, id]);
 
   const handleDeletePost = () => {
-    deletePost(id).then(() => {
-      navigate("/home");
-    });
+    Swal.fire({
+      title: 'Confirm delete post',
+      text: 'Are you sure you want to delete this post?',
+      icon: 'error',
+      confirmButtonText: 'SDelete'
+    }).then(() => {
+      deletePost(id).then(() => {
+        navigate("/home");
+      });
+    })
+    
   };
   const handleSaveChanges = () => {
-    updatePost(id.id, { description: description, code: code });
+    updatePost(id.id, { description: description, code: code }).then(response => {
+      getPost(id.id).then((response) => {
+        setPost(response.data);
+        setCode(response.data.code);
+        setDescription(response.data.description);
+      });
+      Swal.fire({
+        title: 'Post edited',
+        text: 'Your post has been successfully edited',
+        icon: 'success',
+        confirmButtonText: 'Sweet!'
+      })
+      
+     
+    });
   };
   return (
     <div>
@@ -117,25 +140,11 @@ const SinglePost = () => {
           </div>
         </div>
       </div>
-      <br />
+      
+      <Banner title="" /> 
 
-      <br />
-
-      <div class="input-group mb-2" style={{ marginLeft: 60 }}>
-        <input
-          type="text"
-          class="form-control"
-          aria-label="Text input with dropdown button"
-        />
-        <button
-          class="btn btn-outline-secondary "
-          type="button"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-          style={{ color: "#bbbfff" }}
-        >
-          Search
-        </button>
+    
+       <br />
         <Link
           style={{
             color: "white",
@@ -150,11 +159,12 @@ const SinglePost = () => {
         >
           Create Post
         </Link>
-      </div>
+     
 
       <div className="content">
+        <div className="header-color"></div>
         <div style={{ display: "flex" }}>
-          <div style={{ width: "45%" }}>
+          <div style={{ width: "50%" }}>
             <h3
               style={{
                 borderBottom: "1px solid grey",
@@ -216,7 +226,7 @@ const SinglePost = () => {
             <br></br>
             <br />
           </div>
-          <div style={{ width: "55%" }}>
+          <div style={{ width: "45%" }}>
             <img
               src={process.env.PUBLIC_URL + `../images/22.png`}
               width="350"

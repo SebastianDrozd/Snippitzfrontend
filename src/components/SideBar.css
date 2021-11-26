@@ -7,6 +7,8 @@
 
 .category-list{
     list-style: none;
+    padding-left: 2em;
+    padding-right: 2em;
     
     
 }
@@ -17,7 +19,7 @@
 .title{
     text-align: center;
     font-weight: bold;
-    color: #5664fd;
+    color: rgb(102, 133, 255);
     box-shadow: 0 4px 7px -1px rgba(0, 0, 0, 0.1);
 }
 
@@ -28,6 +30,7 @@
     margin-top: 10px;
 }
 .category-item:hover{
-    background-color:  #dde0ff;
+    background-color:  #eeefff;
+    cursor: pointer;
 
 }

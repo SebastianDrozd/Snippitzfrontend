@@ -18,6 +18,7 @@ const SideBar = () => {
   };
   return (
     <div className="category-container" style={{ padding: "1em" }}>
+     
       <img
         src={process.env.PUBLIC_URL + `../images/pair.png`}
         width="150"

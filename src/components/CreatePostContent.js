@@ -25,12 +25,15 @@ const CreatePostContent = () => {
     return (
         <div className="content " >
           <br />
-               <h1 className="title">Create Post</h1>
+               <h1 className="title">Create Snippit</h1>
                <form class="row g-">
   <div class="col-md-4">
-    <label for="inputEmail4" class="form-label">Title</label>
+    <br />
+    <p>Title</p>
     <input onChange={(e) => SetTitle(e.target.value)} class="form-control" id="inputEmail4"/>
   </div>
+  <br />
+  <br />
     <label for="inputPassword4" class="form-label">Language</label>
     <div class="col-md-4">
     <select onChange={(e) => {
@@ -70,7 +73,8 @@ const CreatePostContent = () => {
  
   
  
-  
+  <br />
+  <br />
   <div class="col-12">
     <button onClick={handleSubmit} type="submit" class="btn btn-primary">Save Post</button>
   </div>

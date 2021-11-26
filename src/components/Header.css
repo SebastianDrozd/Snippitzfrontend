@@ -1,12 +1,66 @@
 .header-main{
-    background-position: center center;
+    background-position: 80% 75%;
    
     background-repeat: no-repeat;
-    height:100vh;
-   
+    height:70vh;
+  
     background-image:   url("https://elements-cover-images-0.imgix.net/790945c8-90f0-4ac9-b551-06fa26d4f597?auto=compress%2Cformat&fit=max&w=900&s=21c679857c8dc9aa65cfc280e0cd5dce");
   }
-
-  .title10{
-      color: #58f8c8;
+  .welcome{
+      font-weight: bold;
+      
   }
+  .headercontent{
+      margin-left: 7em;
+  }
+  .title10{
+      color:  black;
+      opacity: .7;
+      
+      padding-left: 6em;
+  }
+  .button-header{
+      margin-left: 13em !important;
+    border-radius: 20px !important;
+    font-size: 1rem;
+    padding: 8px;
+    max-width: 150px;
+    min-width: 150px;
+    box-shadow: 0px 0px 0px 2px inset;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    border: none;
+    box-sizing: border-box;
+    color: rgb(102, 133, 255);
+    font-family: Poppins, sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0px;
+    padding: 0.85rem 1rem;
+    transition: all 0.3s ease-in 0s;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .button-header2{
+    margin-left: 1em !important;
+  border-radius: 20px !important;
+  font-size: 1rem;
+  padding: 8px;
+  max-width: 150px;
+  min-width: 150px;
+  border-color: rgb(102, 133, 255);
+  
+  background-color: rgb(102, 133, 255);
+  border-radius: 5px;
+  border: none;
+  box-sizing: border-box;
+  color: white;
+  font-family: Poppins, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0px;
+  padding: 0.85rem 1rem;
+  transition: all 0.3s ease-in 0s;
+  text-decoration: none;
+  white-space: nowrap;
+}

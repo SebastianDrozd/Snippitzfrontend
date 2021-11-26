@@ -38,8 +38,11 @@ function App() {
     <>
     <Router>
       <NavigationBar />
-      <Header/>
     
+      <Header/>
+   
+  
+   
       <div class="container-fluid">
         <div class="row">
           <div class="col-2">

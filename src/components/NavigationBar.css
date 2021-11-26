@@ -2,31 +2,34 @@
 .nav-links{
     list-style-type: none;
     display: flex;
-    color: #000000;
-    padding-right: 39;
+    padding-right:5em;
     
 }
-.navbar{
+.links{
+    color: rgb(102, 133, 255) !important;  
+}
+.brand{
+    color: rgb(102, 133, 255);
+    font-weight: bold;
+    padding-left: 2em;
+    padding-top: .5em;
+}
+nav{
     padding-top: 0em !important;
+    box-shadow: rgb(0 0 0 / 15%) 0px 1px 6px 0px;
+    background-color: white !important;
+    
 }
 .link-item{
-    padding: .5em;
+    padding-right: 2em;
     padding-top: 2em;
+    color: rgb(102, 133, 255);
 }
 .link-item:hover{
-    border-bottom: 2px solid rgb(255, 254, 254);
+   
     cursor: pointer;
 }
 .navbar{
-    background-image: none;
-    background-color: transparent !important; /* Make the menu become transparent */
-    border-radius: 0px;
-    border: 0;
-    box-shadow: none;
-    padding: 10px;
-    position: absolute; /* Make the menu out of the document flow so it can placed anywhere without disturbing other widgets */
-    top: 0;
-    left: 0;
-    right: 0;
+
     z-index: 10; /* If you delete this line, your menu link won't be clicked because it is behind the background. Applying this code bring the menu in front of the background */
   }

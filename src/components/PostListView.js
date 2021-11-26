@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { setPosts } from "../redux/slices/postSlice";
+import Banner from "./Banner";
 import { getAllPosts } from "./connections/Requests";
 import Pagination from "./Pagination";
 import Post from "./Post";
@@ -19,58 +20,47 @@ export const PostListView = ({ posts }) => {
   }, [dispatch]);
   return (
     <div>
-      <div className="create-post">
-        <br />
-        <br />
-        <br />
-        <h3
-          style={{
-            display: "inline",
-            paddingLeft: 70,
-            color: "#5863F8",
-            fontWeight: "bold",
-          }}
-        >
-          Most popular posts
-        </h3>
-        <SearchBar />
-
-        <br />
-        <br />
-        <p style={{ paddingLeft: 70, display: "inline" }}>Sort by </p>
-        <select style={{ display: "inline" }} id="cars">
-          <option value="volvo">Popularity</option>
-          <option value="saab">Date Created</option>
-        </select>
-      </div>
-      {loggedIn === true ? (
+      <br />
+      <Banner title="Newest Posts" /> 
+      <br />
+      {loggedIn === true && (
         <>
           <Link
             style={{
-              color: "white",
               float: "right",
+              textAlign: "center",
+              color: "white",
+              marginLeft: "1em",
               padding: 20,
               borderRadius: 20,
-              border: "1px solid slateblue",
-              backgroundColor: "#5863F8",
+              fontWeight: "bold",
+              backgroundColor: "rgb(102, 133, 255)",
             }}
             to="/create"
           >
             Create Post
           </Link>
+          <br />
         </>
-      ) : (
-        <div style={{ textAlign: "right" }}>
-          <p>Want to create a post?</p>
-          <Link to="/login">Sign in</Link>
-          <p>No account?</p>
-          <Link to="/signup">Sign up</Link>
-        </div>
       )}
+
       <br />
+      
+      <SearchBar />
+      <div style={{ float: "right" }}>
+
+        <select class="form-select" style={{ display: "inline", float: "" }} id="cars">
+          <option value="volvo">Sort By</option>
+          <option value="saab">Date Created</option>
+        </select>
+        <br />
+      </div>
+
+     
       <br />
+
       <div
-        style={{ marginLeft: "2em", paddingTop: "1em" }}
+        style={{ marginLeft: "3em", paddingTop: "1em" }}
         class="container-fluid"
       >
         {sortChoice}
@@ -84,7 +74,7 @@ export const PostListView = ({ posts }) => {
           )}
           {posts &&
             posts.map((post) => (
-              <div class="col-6" style={{ marginLeft: 0, marginTop: 20 }} key={post.id}>
+              <div class="col-4" style={{ marginLeft: 0, marginTop: 20 }}>
                 <Post
                   title={post.title}
                   language={post.language}

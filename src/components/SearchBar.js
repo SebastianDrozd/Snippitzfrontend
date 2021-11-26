@@ -2,8 +2,10 @@ import React from 'react'
 
 const SearchBar = () => {
     return (
-        <div style={{display: 'inline'}}>
-              <div class="input-group " style={{ width: '40%', float: 'right',marginBottom: '2em' }}>
+        <div >
+          <br />
+          <br />
+              <div class="input-group " style={{ width: '60%', marginLeft: '15em'}}>
           <input
             type="text"
             class="form-control"
@@ -14,7 +16,7 @@ const SearchBar = () => {
             type="button"
             
             aria-expanded="false"
-            style={{ color: "#bbbfff" }}
+            style={{ color: "rgb(102, 133, 255)",height: '2.3em' }}
           >
             Search
           </button>

@@ -8,6 +8,7 @@ import {
   updateComment,
 } from "./connections/Requests";
 import { setComments } from "../redux/slices/postSlice";
+import Swal from 'sweetalert2'
 const Comment = ({ comment }) => {
   const id = useParams();
   const dispatch = useDispatch();
@@ -15,10 +16,18 @@ const Comment = ({ comment }) => {
   const [commentString, setCommentString] = useState(comment.commentMessage);
   const [wantsEdit, setWantsEdit] = useState(false);
   const handleDeleteComment = () => {
-    deleteComment(comment.id).then((response) => {
-      getAllComments2(id.id).then((response) => {
-        dispatch(setComments(response.data));
-      });
+    Swal.fire({
+      title: 'Confirm delete post',
+      text: 'Are you sure you want to delete this post?',
+      icon: 'error',
+      confirmButtonText: 'Delete'
+    }).then(() => {
+      deleteComment(comment.id).then((response) => {
+        getAllComments2(id.id).then((response) => {
+          dispatch(setComments(response.data));
+        });
+    })
+  
     });
   };
   const handleEditPost = () => {
@@ -27,7 +36,8 @@ const Comment = ({ comment }) => {
   };
   const handleUpdateComment = () => {
     updateComment(comment.id, { commentMessage: commentString }).then(
-      (response) => console.log(response)
+      (response) => {console.log(response)
+      window.location.reload()}
     );
 
     setWantsEdit(false);

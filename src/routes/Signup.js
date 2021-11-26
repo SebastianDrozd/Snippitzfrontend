@@ -21,7 +21,7 @@ const Signup = (props) => {
       navigate("/login");
   }
     return (
-        <div style={{padding: 200}}>
+        <div id="formClass" style={{padding: 200}}>
              <form class="form-signin">
       <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72"/>
       <h1 class="h3 mb-3 font-weight-normal">Register</h1>
@@ -34,7 +34,7 @@ const Signup = (props) => {
        
       </div>
       <button onClick={handleSubmit} class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-      <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+      <p class="mt-5 mb-3 text-muted">&copy; 2021</p>
     </form>
         </div>
     )
