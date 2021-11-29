@@ -5,7 +5,45 @@
    
   
 }
+.main-container{
+  border-radius: 20px;
+}
+body{
+  
+}
+.cta-img{
+  margin-bottom: 1;
+}
 
+.cta-p{
+  font-size: 16px;
+  opacity: 0.7;
+  text-align: center;
+}
+.cta-header{
+  text-align: center;
+  color: rgb(102, 133, 255);
+}
+.cta-category-item{
+  width: 20em !important;
+  box-shadow: 0 3px 10px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  padding: 2em;
+}
+.home-message{
+  text-align: center;
+  font-weight: bold;
+  font-family: var(--font-family);
+  opacity: 0.8;
+  font-size: 20px;
+  margin-left: 1em;
+  margin-bottom: 2em;
+}
+.second-home-message
+{
+  line-height: 30px;
+  margin-left: 2em;
+}
 .view{
     background-color: #5863f807;
 }

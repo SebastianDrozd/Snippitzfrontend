@@ -3,7 +3,7 @@ import { getPostsByType } from "./connections/Requests";
 import "./SideBar.css";
 import { useDispatch } from "react-redux";
 import { setPosts, setSortChoice } from "../redux/slices/postSlice";
-
+import java from '../assets/java.jpg'
 const SideBar = () => {
   const dispatch = useDispatch();
 
@@ -31,7 +31,7 @@ const SideBar = () => {
       <h3 className="title">Categories</h3>
 
       <br />
-
+    <br />
       <p className="langtitle">Languages: </p>
       <ul className="category-list">
         <li onClick={handleClick} value="Java" className="category-item">
@@ -64,8 +64,32 @@ const SideBar = () => {
         <li onClick={handleClick} className="category-item">
           Raspberry Pi
         </li>
+        <li onClick={handleClick} className="category-item">
+          Rust
+        </li>
+        <li onClick={handleClick} className="category-item">
+          Perl
+        </li>
+        <li onClick={handleClick} className="category-item">
+          PHP
+        </li>
+        <li onClick={handleClick} className="category-item">
+          Visual Basic
+        </li>
+        <li onClick={handleClick} className="category-item">
+          Ruby
+        </li>
+        <li onClick={handleClick} className="category-item">
+          Go
+        </li>
+        <li onClick={handleClick} className="category-item">
+          SQL
+        </li>
+        <li onClick={handleClick} className="category-item">
+          TypeScript
+        </li>
       </ul>
-
+    <br />
       <p className="langtitle">Type </p>
       <ul className="category-list">
         <li onClick={handleClick} value="Java" className="category-item">

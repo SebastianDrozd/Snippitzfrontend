@@ -12,8 +12,8 @@ body {
 .blog-card {
   display: flex;
   flex-direction: column;
-  margin: 1rem auto;
-  box-shadow: 0 3px 7px 2px rgba(0, 0, 0, 0.1);
+ 
+  box-shadow: 0 3px 10px 6px rgba(0, 0, 0, 0.1);
   margin-bottom: 3.6%;
   background: #fff;
   line-height: 1.4;
@@ -21,7 +21,8 @@ body {
   border-radius: 20px;
   overflow: hidden;
   z-index: 0;
-  width: 19em;
+  width: 14em;
+  max-height: 2em !important;
 }
 .blog-card a {
   color: inherit;
@@ -178,6 +179,7 @@ body {
     top: 0;
     bottom: 0;
     z-index: -1;
+   
   }
   .blog-card.alt {
     flex-direction: row-reverse;
@@ -186,6 +188,7 @@ body {
     left: inherit;
     right: -10px;
     transform: skew(3deg);
+    
   }
   .blog-card.alt .details {
     padding-left: 25px;

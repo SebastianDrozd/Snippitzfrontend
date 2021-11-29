@@ -15,7 +15,10 @@ import { useSelector } from "react-redux";
 import { setUserStatus } from "./redux/slices/userSlice";
 import MyPosts from "./routes/MyPosts";
 import Header from "./components/Header";
+import arrow from './assets/arrow.png'
+import {Link} from 'react-scroll'
 function App() {
+  
   const dispatch = useDispatch()  
   const post2 = useSelector((state) => state.posts.posts)
     useEffect(() => {
@@ -41,16 +44,21 @@ function App() {
     
       <Header/>
    
-  
+    <br />
+    <Link activeClass="active" to="create" spy={true} smooth={true}><img src={arrow} height="50" width="50" alt="" style={{marginLeft: "50%"}} /></Link>
    
-      <div class="container-fluid">
-        <div class="row">
+    <br />
+    <br />
+    
+   
+      <div class="container-fluid yo">
+        <div class="row" style={{padding: '1em'}}>
           <div class="col-2">
             <SideBar /> 
           </div>
           <div class="col-9">
           <Routes>
-          <Route exact path="/" element={<Home/>}/>
+          <Route exact path="/" element={<PostListView posts = {post2}/>}/>
           <Route exact path="/myposts" element={ <MyPosts/>}/>
          
           <Route exact path="/home" element={<PostListView posts = {post2}/>}/>
@@ -64,10 +72,9 @@ function App() {
       </div>
         
       </Router>
-      <br />
-      <br />
+     
       <footer class="site-footer">
-  <h3 style={{textAlign:"center", color: 'white', paddingTop: 60}}>Snippitz.io</h3>
+  <h3 style={{textAlign:"center", paddingTop: 60}}>Snippitz.io</h3>
 </footer>
     </>
   );

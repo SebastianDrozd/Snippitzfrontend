@@ -16,6 +16,8 @@ import moment from "moment";
 import { useSelector, useDispatch } from "react-redux";
 import { setComments } from "../redux/slices/postSlice";
 import Banner from "./Banner";
+import design from '../assets/design.svg'
+import proto from '../assets/proto.svg'
 const SinglePost = () => {
   const dispatch = useDispatch();
   let navigate = useNavigate();
@@ -140,25 +142,9 @@ const SinglePost = () => {
           </div>
         </div>
       </div>
-      
-      <Banner title="" /> 
-
     
-       <br />
-        <Link
-          style={{
-            color: "white",
-            float: "right",
-            padding: 20,
-            borderRadius: 20,
-            border: "1px solid slateblue",
-            backgroundColor: "#5863F8",
-            marginLeft: 10,
-          }}
-          to="/create"
-        >
-          Create Post
-        </Link>
+  
+      
      
 
       <div className="content">
@@ -228,18 +214,18 @@ const SinglePost = () => {
           </div>
           <div style={{ width: "45%" }}>
             <img
-              src={process.env.PUBLIC_URL + `../images/22.png`}
+              src={design}
               width="350"
               height="400"
               alt="Image1"
-              style={{ marginLeft: 0, paddingTop: 50 }}
+              style={{ marginLeft: 80, paddingTop: 50 }}
             ></img>
             <img
-              src={process.env.PUBLIC_URL + `../images/device2.png`}
+              src={proto}
               width="225"
               height="200"
               alt="Image1"
-              style={{ marginLeft: 50, paddingTop: 10 }}
+              style={{ marginLeft: 70, paddingTop: 10 }}
             ></img>
           </div>
         </div>

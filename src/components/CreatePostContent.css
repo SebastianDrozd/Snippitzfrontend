@@ -1,12 +1,24 @@
 .title{
     text-align: center;
     padding: 1em;
+    color: white;
 }
-.content{
-    padding: 20em;
-    width: 60em;
+.content2{
+    padding: 6em;
+    width: 75%;
     margin-left: 10em !important;
     margin-top: 5em !important;
+    background: hsla(211, 67%, 53%, 1);
+    color: white;
+    border-radius: 20px 70px;
+ 
+background: radial-gradient(circle, rgb(24, 76, 131) 0%, hsla(283, 80%, 12%, 1) 100%);
+
+background: -moz-radial-gradient(circle, rgb(22, 63, 107) 0%, hsla(283, 80%, 12%, 1) 100%);
+
+background: -webkit-radial-gradient(circle, rgb(23, 70, 121) 0%, hsla(283, 80%, 12%, 1) 100%);
+
+filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#3684D7", endColorstr="#280635", GradientType=1 );
     
 }
 form{
@@ -15,4 +27,7 @@ form{
 
 .form-control{
     margin-bottom: 2em;
+}
+.elevation-cover{
+    box-shadow: 0 3px 10px 6px rgba(0, 0, 0, 0.1);
 }
