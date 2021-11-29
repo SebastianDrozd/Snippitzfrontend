@@ -9,7 +9,7 @@ const CommentSection = ({ comments, id }) => {
   return (
     <div>
       <div className="comments-container">
-        <h1 style={{ display: "inline" }}>Comments</h1>
+        <h1 style={{ display: "inline",textAlign: 'center',marginLeft: '3em' }}>Comments</h1>
         <p style={{ paddingLeft: 70, display: "inline" }}>Sort by </p>
         <select id="cars">
           <option value="volvo">Popularity</option>

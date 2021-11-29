@@ -12,7 +12,7 @@ const Header = () => {
 
         }
         else{
-            navigate('/login#formClass')
+            navigate('/login')
             window.location.reload();
         }
     }
@@ -21,7 +21,7 @@ const Header = () => {
 
         }
         else{
-            navigate('/signup#formClass')
+            navigate('/signup')
             window.location.reload();
         }
     }

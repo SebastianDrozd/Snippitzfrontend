@@ -1,0 +1,73 @@
+.profile-card{
+    height: 25em;
+    width: 18em;
+    box-shadow: 0 3px 10px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2em;
+}
+.profile-additonal-info{
+    height: 11em;
+    width: 18em;
+    box-shadow: 0 3px 10px 6px rgba(0, 0, 0, 0.1);
+    padding: 2em;
+}
+.post-list{
+    padding: 2em;
+    box-shadow: 0 3px 10px 6px rgba(0, 0, 0, 0.1);
+    width: 40em;
+    max-height: 69em;
+}
+
+.profile-image{
+    margin-top: 2em;
+}
+.myposts-welcome{
+    color: rgb(102, 133, 255) !important;
+}
+.post-container{
+    padding: 3em;
+}
+.my-post{
+    box-shadow: 0 3px 10px 6px rgba(0, 0, 0, 0.1);
+    margin: 1em 0em;
+    padding: 2em;
+    transition:0.3s;
+    border-radius: 10px;
+
+}
+.my-post:hover{
+    transform: scale(1.05);
+    transition:0.3s;
+}
+
+.link-to-post{
+    color: rgb(102, 133, 255) !important;
+    font-size: 24px;
+}
+.link-to-post:hover{
+    
+}
+.actual-post-list{
+    max-height: 46em;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 1em;
+   
+}
+::-webkit-scrollbar {
+    width: 10px;
+    margin-left: 2em;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(235, 235, 235);
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }  

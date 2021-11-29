@@ -12,7 +12,10 @@
     box-sizing: border-box;
 }
 .comments-section{
-   margin-left: 7em !important;
+   border-radius: 20px;
+   padding: 3em;
+   margin-left: 2em !important;
+  
 }
 
 a {

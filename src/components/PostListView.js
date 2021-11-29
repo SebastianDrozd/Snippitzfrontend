@@ -29,7 +29,7 @@ export const PostListView = ({ posts }) => {
 
       <br />
       <div style={{display: 'flex', alignItems: 'center',justifyContent: 'space-evenly'}}>
-        <div style={{display: 'flex', flexDirection: 'column',padding: '7em'}}>
+        <div style={{display: 'flex', flexDirection: 'column',padding: '2em'}}>
       <p className="home-message">Check out all the newest coolest posts by users just like you!</p>
       <p className="second-home-message" style={{opacity: '0.5'}}>Lorem ipsum c incididunt ut labore et dolore magna aliqua. Nec tincidunt praesent semper feugiat. Bibendum enim facilisis gravida neque convallis. Ac tincidunt vitae semper quis lectus nulla. Quis vel eros donec ac.</p>
       <p className="second-home-message" style={{opacity: '0.5'}}>Create, post, save ,edit all your favorite code snippitz. At Snippitz.IO, keep all your favorite functions together in one place for world to see! </p>
@@ -38,7 +38,7 @@ export const PostListView = ({ posts }) => {
       </div>
       <img className="cta-img" src={office} height="400" width="350" alt="" />
       </div>
-      <div style={{display: 'flex', justifyContent: 'space-evenly',paddingLeft: '9em',paddingRight: '7em'}}>
+      <div style={{display: 'flex', justifyContent: 'space-evenly',paddingLeft: '2em',paddingRight: '2em'}}>
         <div className="cta-category-item" style={{display: 'flex', flexDirection: 'column',alignItems:'center'}}>
           <h4 className="cta-header">Create</h4>
           <p className="cta-p">Create a one of a kind function for all the people to see. What you put in is what you get out. </p>
@@ -58,7 +58,13 @@ export const PostListView = ({ posts }) => {
       <br />
       <br />
       <br />
-      <div style={{display: 'flex', justifyContent: 'space-evenly'}}>
+      
+     
+      <br />
+            <hr style={{marginLeft: '3em'}} />
+            <br />
+            <br />
+            <div style={{display: 'flex', justifyContent: 'space-evenly'}}>
       <div style={{ float: "left",marginLeft: '3em' }}>
 
         <select class="form-select" style={{ display: "inline", float: "" }} id="cars">
@@ -74,7 +80,7 @@ export const PostListView = ({ posts }) => {
           <Link id="create"
             style={{
              float: 'right',
-              padding: '6em',
+              padding: '12em',
               textAlign: "center",
               color: "white",
               marginLeft: "1em",
@@ -90,14 +96,37 @@ export const PostListView = ({ posts }) => {
           </Link>
         
         </>
+      )}
+       {loggedIn === true && (
+        <>
+          <Link id="create"
+            style={{
+             float: 'right',
+              padding: '12em',
+              textAlign: "center",
+              color: "white",
+              marginLeft: "1em",
+              padding: 8,
+              borderRadius: 20,
+              height: '40px',
+              paddingLeft: '1em',
+              paddingRight: '1em',
+              
+              color: "rgb(102, 133, 255)",
+              border: '3px solid rgb(102,133,255)'
+            }}
+            to="/myposts"
+          >
+            My Profile
+          </Link>
+        
+        </>
       )}</div>
-     
-      <br />
-            <hr style={{marginLeft: '3em'}} />
       <div
-        style={{ marginLeft: "3em", paddingTop: "1em" }}
+        style={{ marginLeft: "2em", paddingTop: "1em" }}
         class="container-fluid"
       >
+        
         {sortChoice}
         <div class="row " style={{ justifyContent: "space-evenly" }}>
           {posts.length === 0 ? (

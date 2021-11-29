@@ -1,6 +1,12 @@
 import axios from 'axios'
-export const savePost = (post) => {
-    axios.post('http://localhost:8080/api/posts', post)
+export const savePost = (post,token) => {
+  
+    const headers = {
+        'Authorization': 'Bearer ' + token
+      }
+    return axios.post('http://localhost:8080/api/posts', post, {
+        headers: headers}
+    )
 }
 export const getAllPosts = () => {
    return  axios.get('http://localhost:8080/api/posts')
@@ -69,6 +75,7 @@ export const verifyToken = (token) => {
 }
 
 export const updateComment = (id,comment) => {
+    console.log(id, comment)
     return axios.put(`http://localhost:8080/api/comments/${id}`,comment)
 }
 export const deleteComment = (id) => {
@@ -77,4 +84,8 @@ export const deleteComment = (id) => {
 export const requestPageAble= (pageNumber) => {
     console.log("this is page number", pageNumber)
     return axios.get(`http://localhost:8080/api/posts/query?pageSize=12&pageNo=${pageNumber}`)
+}
+
+export const getUser = (username) => {
+    return axios.get(`http://localhost:8080/api/test/users/${username}`)
 }

@@ -18,6 +18,7 @@ import { setComments } from "../redux/slices/postSlice";
 import Banner from "./Banner";
 import design from '../assets/design.svg'
 import proto from '../assets/proto.svg'
+import arrow2 from '../assets/arrow2.png'
 const SinglePost = () => {
   const dispatch = useDispatch();
   let navigate = useNavigate();
@@ -71,8 +72,23 @@ const SinglePost = () => {
      
     });
   };
+  const handleGoBack = () => {
+    navigate('../')
+  }
   return (
     <div>
+      <img
+        onClick={handleGoBack}
+        src={arrow2}
+        height="50"
+        width="50"
+        alt=""
+        style={{ marginLeft: "4em", cursor: "pointer" }}
+      />
+      <br />
+      <br />
+      <br />
+      <br />
       <div
         class="modal fade"
         id="exampleModal"
@@ -142,11 +158,6 @@ const SinglePost = () => {
           </div>
         </div>
       </div>
-    
-  
-      
-     
-
       <div className="content">
         <div className="header-color"></div>
         <div style={{ display: "flex" }}>
@@ -158,45 +169,51 @@ const SinglePost = () => {
                 fontWeight: "bold",
               }}
             >
-              {post.title}
+              {post.title && post.title.toUpperCase()}
             </h3>
             <br />
             <br />
-            <div className="wrap">
+            <div style={{display: 'flex',justifyContent:'space-evenly'}}>
+            <div className="wrap" style={{display: 'flex',alignItems: 'center',justifyContent: 'space-evenly',width: '10em'}}>
+              <div style={{display: 'flex', flexDirection:'column',alignItems: 'center',justifyContent: 'space-evenly'}}>
               <h3>
                 <i class="fa fa-code" aria-hidden="true"></i>
               </h3>
-              <h4 style={{ opacity: "0.7", display: "inline" }}>
+              <h4 style={{ opacity: "0.7"}}>
                 {post.language}
               </h4>
-              <h4
-                style={{ display: "inline", marginLeft: "4em", opacity: "0.7" }}
-              >
-                7 <i style={{ color: "slateblue" }} className="fa fa-heart"></i>
-              </h4>
-              <br />
+              </div>
+          
             </div>
-            <br />
-            <br />
-            <div className="wrap">
+            <div className="wrap" style={{display: 'flex',alignItems: 'center',justifyContent: 'space-evenly',width: '10em'}}>
+              <div style={{display: 'flex', flexDirection:'column',alignItems: 'center'}}>
               <h3>
                 <i class="fa fa-user" aria-hidden="true"></i>
               </h3>
               <h5 style={{ opacity: "0.7", display: "inline" }}>
                 {post.author}{" "}
               </h5>
+              </div>
+            </div>
+            
+            
+            <div className="wrap" style={{display: 'flex',alignItems: 'center',justifyContent: 'space-evenly',width: '10em'}}>
+            <div style={{display: 'flex', flexDirection:'column',alignItems: 'center'}}>
+              <h3>
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              </h3>
               <h5
                 style={{
-                  display: "inline",
-                  marginLeft: "1em",
-                  marginRight: 10,
                   opacity: "0.7",
                 }}
               >
                 {moment(post.createdAt).fromNow()}
-                <i class="fa fa-clock-o" aria-hidden="true"></i>
+              
               </h5>
-              <br />
+              </div>
+             
+             
+            </div>
             </div>
             <br />
             <br />
@@ -225,10 +242,11 @@ const SinglePost = () => {
               width="225"
               height="200"
               alt="Image1"
-              style={{ marginLeft: 70, paddingTop: 10 }}
+              style={{ marginLeft: 130, marginTop: 30 }}
             ></img>
           </div>
         </div>
+        <br />
         {post.language && (
           <SyntaxHighlighter
             language={post.language.toLowerCase()}

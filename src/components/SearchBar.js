@@ -4,7 +4,7 @@ const SearchBar = () => {
     return (
         <div >
           
-              <div class="input-group " style={{ width: '100%', marginLeft: '1em'}}>
+              <div class="input-group " style={{ width: '20em !important', marginLeft: '1em'}}>
           <input
             type="text"
             class="form-control"

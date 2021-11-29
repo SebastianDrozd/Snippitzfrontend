@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import moment from "moment";
 import { useParams } from "react-router";
 import { useSelector, useDispatch } from "react-redux";
+import share from '../assets/share.svg'
 import {
   deleteComment,
   getAllComments2,
@@ -35,6 +36,7 @@ const Comment = ({ comment }) => {
     setWantsEdit(true);
   };
   const handleUpdateComment = () => {
+    console.log(comment.id)
     updateComment(comment.id, { commentMessage: commentString }).then(
       (response) => {console.log(response)
       window.location.reload()}
@@ -48,7 +50,7 @@ const Comment = ({ comment }) => {
         <div className="comment-main-level animate__animated animate__zoomIn">
           <div className="comment-avatar">
             <img
-              src="http://i9.photobucket.com/albums/a88/creaticode/avatar_2_zps7de12f8b.jpg"
+              src={share}
               alt=""
             />
             {comment.id}

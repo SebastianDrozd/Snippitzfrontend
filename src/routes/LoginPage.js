@@ -1,8 +1,10 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import { useDispatch } from 'react-redux'
 import { loginUser } from '../components/connections/Requests'
 import { setUserStatus } from '../redux/slices/userSlice';
 import {  useNavigate } from "react-router-dom";
+import op from '../assets/op.svg'
+
 import './LoginPage.css'
 const LoginPage = () => {
   const navigate = useNavigate();
@@ -10,8 +12,21 @@ const LoginPage = () => {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
   const [hasError, setError] = useState(false)
+  const [missing, setMissing] = useState(false);
 
- const handleLogin = () => {
+  useEffect(() => {
+    const elem = document.getElementById("yoyo");
+    if (elem) {
+      elem.scrollIntoView({behavior: 'smooth'});
+    }
+  }, []);
+
+ const handleLogin = (e) => {
+  if (username.length == 0 || password.length == 0) {
+    setMissing(true);
+    return;
+  }
+   e.preventDefault()
     loginUser({snipUsername: username,snipPassword: password})
     .then(response => {
     
@@ -20,14 +35,35 @@ const LoginPage = () => {
       localStorage.setItem("token",token)
     
       dispatch(setUserStatus({loggedIn: true, username: username }))
-      navigate('/home')
+      navigate('/myposts')
     }).catch((response) => {setError(true)})
   }
     return (
       <div id="formClass" style={{padding: 200}}>
-             <form class="form-signin">
-      <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72"/>
-      <h1 class="h3 mb-3 font-weight-normal">Log in</h1>
+             <form class="form-signin"style={{
+          boxShadow: "0 3px 10px 6px rgba(0, 0, 0, 0.1)",
+          padding: "3em",
+          borderRadius: "20px",
+        }}>
+      <img
+          id="yoyo"
+          style={{ marginLeft: "7em" }}
+          class="mb-4"
+          src={op}
+          alt=""
+          width="200"
+          height="200"
+        />
+        <br/>
+        <br/>
+     <h1
+          style={{ textAlign: "center", fontWeight: "bold", opacity: "0.8" }}
+          class="h3 mb-3 font-weight-normal"
+        >
+         Log In
+        </h1>
+        <br/>
+        <br/>
       <label for="inputEmail" class="sr-only">Username</label>
       <input onChange={(e) => setUsername(e.target.value)}  id="inputEmail" class="form-control" placeholder="Username" autofocus required/>
       <br/>
@@ -36,13 +72,19 @@ const LoginPage = () => {
       <div class="checkbox mb-3">
        
       </div>
-      
-      <button onClick={handleLogin} className="button-header3" >Sign in</button>
-      <br />
+      {missing && (
+          <div class="alert alert-danger" role="alert">
+            Please fill out all fields
+          </div>
+        )}
       {hasError && <div class="alert alert-danger" role="alert">
   You have entered a wrong username/password combination!
 </div>}
-      <p class="mt-5 mb-3 text-muted">&copy; 2021</p>
+      <button style={{float: 'right'}} onClick={handleLogin} className="button-header3" >Sign in</button>
+      <br />
+      
+      <br/>
+      <br/>
     </form>
         </div>
     )

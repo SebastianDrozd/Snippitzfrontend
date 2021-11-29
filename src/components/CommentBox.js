@@ -8,7 +8,13 @@ const CommentBox = ({ id }) => {
   // {loggedIn == true? <div> <textarea onChange={(e) => {setComment(e.target.value)}} id="inputAddress" name="inputAddress" rows="4" cols="50" /> <button onClick={handleSumbit}>post comment</button></div> : ""}
   const [comment, setComment] = useState("");
   const username = useSelector((state) => state.user.username);
+  const [commentBlank, setCommentBlank] = useState(false)
   const handleSumbit = () => {
+    if(comment.length == 0){
+      setCommentBlank(true)
+      return;
+
+    }
     postComment(
       {
         commentMessage: comment,
@@ -42,6 +48,11 @@ const CommentBox = ({ id }) => {
                 placeholder="Add comment..."
               ></textarea>
             </form>
+            <br />
+            {commentBlank && <div class="alert alert-danger" role="alert">
+  You cannot post a blank comment
+</div>}
+            <br />
             <button
               onClick={handleSumbit}
               style={{ display: "inline", float: "right" }}

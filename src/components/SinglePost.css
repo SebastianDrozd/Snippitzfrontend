@@ -4,17 +4,10 @@
     border-radius: 40px 200px;
     border: 2px solid #bbbfff;;
     box-shadow: 10px 10px 60px rgb(0 0 0 / 0.2);
-    margin-left: 5em !important;
-    width: 100% !important;
+    margin-left: 10em !important;
+    width: 85% !important;
     margin-left: 4em !important;
-    color: white;
-    background: radial-gradient(circle, rgb(24, 76, 131) 0%, hsla(283, 80%, 12%, 1) 100%);
-
-background: -moz-radial-gradient(circle, rgb(22, 63, 107) 0%, hsla(283, 80%, 12%, 1) 100%);
-
-background: -webkit-radial-gradient(circle, rgb(23, 70, 121) 0%, hsla(283, 80%, 12%, 1) 100%);
-
-filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#3684D7", endColorstr="#280635", GradientType=1 );
+    color: rgb(0, 0, 0);
     
 }
 .headr-color{
@@ -25,4 +18,6 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#3684D7", en
     box-shadow: 0 3px 7px 2px rgba(0, 0, 0, 0.1);
     border-radius: 20px;
     padding: 1em;
+    margin-left: 2em;
+    min-width: 9.5em ;
 }

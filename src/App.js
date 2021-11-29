@@ -56,7 +56,7 @@ function App() {
           <div class="col-2">
             <SideBar /> 
           </div>
-          <div class="col-9">
+          <div class="col-10">
           <Routes>
           <Route exact path="/" element={<PostListView posts = {post2}/>}/>
           <Route exact path="/myposts" element={ <MyPosts/>}/>

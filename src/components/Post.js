@@ -60,7 +60,7 @@ const Post = ({
     <div className=" animate__animated animate__flipInX">
       <div
         className="blog-card"
-        style={{ maxHeight: "18em", minHeight: "15em" }}
+        style={{ maxHeight: "20em", minHeight: "20em" }}
       >
         <div className="meta">
           <div
@@ -91,9 +91,11 @@ const Post = ({
           </ul>
         </div>
         <div className="description">
-          <h1>{title}</h1>
+          <h1 style={{fontSize:"20px"}}>{title}</h1>
           <h2>{language}</h2>
-          <p style={{maxHeight:'1em !important'}}> {description}</p>
+        
+          <p style={{fontSize:"14px"}}> {description && description.substring(0,60)+ "..."}</p>
+          
           <p className="read-more">
             <a href="/home">
               <Link to={`/snippitz/${id}`}>View post</Link>
@@ -101,11 +103,15 @@ const Post = ({
           </p>
           {showButtons && (
             <>
+            <br />
+            <br />
+            <div style={{display: 'flex'}}>
+              
               <br />{" "}
               <button
                 type="button"
                 class="btn btn-success"
-                style={{ marginRight: "1em" }}
+                style={{ marginRight: "1em"}}
                 onClick={handleEditPost}
               >
                 Edit
@@ -117,6 +123,7 @@ const Post = ({
               >
                 Delete
               </button>
+              </div>
             </>
           )}
         </div>
