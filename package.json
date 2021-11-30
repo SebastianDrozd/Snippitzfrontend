@@ -1,6 +1,6 @@
 {
   "name": "snippitz",
-  "homepage" : "https://hungry-pasteur-4969e2.netlify.app",
+  "homepage" : "./",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
