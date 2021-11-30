@@ -19,6 +19,7 @@ import Banner from "./Banner";
 import design from '../assets/design.svg'
 import proto from '../assets/proto.svg'
 import arrow2 from '../assets/arrow2.png'
+import SideBar from "./SideBar";
 const SinglePost = () => {
   const dispatch = useDispatch();
   let navigate = useNavigate();
@@ -76,8 +77,16 @@ const SinglePost = () => {
     navigate('../')
   }
   return (
+    
     <div>
-      <img
+      <div class="row" style={{ padding: "1em" }}>
+        <div class="col-2">
+          <SideBar />
+          
+        </div>
+        <div class="col-9">
+          
+        <img
         onClick={handleGoBack}
         src={arrow2}
         height="50"
@@ -284,6 +293,9 @@ const SinglePost = () => {
       <div className="comments-section">
         <CommentSection id={id.id} comments={comments} />
       </div>
+        </div>
+      </div>
+      
     </div>
   );
 };

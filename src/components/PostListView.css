@@ -14,7 +14,7 @@ body{
 }
 .cta-img{
   margin-bottom: 1;
-  margin-right: 1em;
+  margin-right: 3em;
 }
 
 .cta-p{
@@ -34,12 +34,13 @@ body{
 }
 .home-message{
   text-align: center;
-  font-weight: bold;
+  font-weight: 900;
   font-family: var(--font-family);
   opacity: 0.8;
   font-size: 20px;
   margin-left: 1em;
   margin-bottom: 2em;
+  color: rgb(102, 133, 255);
 }
 .second-home-message
 {

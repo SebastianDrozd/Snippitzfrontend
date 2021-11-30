@@ -52,11 +52,9 @@ function App() {
     
    
       <div class="container-fluid yo">
-        <div class="row" style={{padding: '1em'}}>
-          <div class="col-2">
-            <SideBar /> 
-          </div>
-          <div class="col-10">
+       
+          
+         
           <Routes>
           <Route exact path="/" element={<PostListView posts = {post2}/>}/>
           <Route exact path="/myposts" element={ <MyPosts/>}/>
@@ -67,8 +65,9 @@ function App() {
           <Route path="/login" element={<LoginPage />}/>
           <Route path="/signup" element={<Signup/>}/>
         </Routes>
-          </div>
-        </div>
+       
+        
+        
       </div>
         
       </Router>

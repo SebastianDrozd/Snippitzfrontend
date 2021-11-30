@@ -20,15 +20,15 @@ const SideBar = () => {
     <div className="category-container" style={{ padding: "1em" }}>
      
       
-      <br />
+     
 
-      <h3 className="title"><img
+      <img
         src={process.env.PUBLIC_URL + `../images/pair.png`}
         width="150"
         height="100"
         alt="Image1"
-        style={{ marginLeft:0, paddingTop: 0, display: "inline" }}
-      ></img></h3>
+        style={{ marginBottom:'4em', paddingTop: 0, display: "inline" }}
+      ></img>
 
       <br />
     <br />

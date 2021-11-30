@@ -5,10 +5,11 @@ import Post from '../components/Post'
 import './MyPosts.css'
 import post from  '../assets/post.png'
 import like from '../assets/like.png'
-import { Link } from 'react-router-dom'
+import { Link,useNavigate } from 'react-router-dom'
 import moment from "moment";
 import { getUser } from '../components/connections/Requests'
 const MyPosts = () => {
+  const navigate = useNavigate()
     const username = useSelector(state=> state.user.username)
     const posts = useSelector(state => state.posts.posts)
     const userPosts = posts.filter(post => post.author === username)
@@ -24,6 +25,9 @@ const MyPosts = () => {
             setUser(reponse.data)
       })
     },[])
+    const handleGoHome = () => {
+      navigate('/home')
+    }
     return (
         <div class="container">
           <br />
@@ -42,7 +46,7 @@ const MyPosts = () => {
                 <br />
                 <p style={{opacity: '0.7'}}>Member since {moment(user.createdAt).format('MM-DD-YYYY')}</p>
                 <br />
-                <button  className="button-header" data-id="header-login-btn">home</button>
+                <button onClick={handleGoHome}  className="button-header" data-id="header-login-btn">home</button>
                 </div>
 
               </div>
@@ -53,17 +57,42 @@ const MyPosts = () => {
           </div>
           <br />
           <div style={{display: 'flex',alignItems: 'center', justifyContent: 'space-evenly'}}>
-          <img src={like} height="50" width="50" alt="" style={{marginRight: '2em'}} />
+          <img src={like} height="50" width="50" alt="" style={{marginRight: '0em'}} />
           <p  style={{opacity: '0.7',marginRight: '2em'}}> 0 post likes </p>
           </div>
               </div>
             </div>
             <div className="post-list">
               <h2 className="myposts-welcome">Welcome back, {username}!</h2>
+            
               <div className="post-container" style={{display: 'flex',flexDirection: 'column'}}>
-                <h3 style={{opacity: '0.8'}}>My Posts</h3>
+      
             <br />
-                <Link id="create"
+      
+                {userPosts.length == 0 && <div>
+                
+                    <h3 style={{textAlign: 'center', opacity: '0.9'}}>You have no posts</h3>
+                    <br />
+                    <p style={{textAlign: 'center', opacity: '0.7'}}>Create your first post by clicking the button below </p>
+                    <br />
+                    <br /></div>}
+                <div className="actual-post-list">
+                
+                {userPosts &&
+            userPosts.map((post) => (
+              <div>
+                  <div className="my-post">
+                  <Link className="link-to-post" style={{display: 'block'}} to={`/snippitz/${post.id}`}>{post.title}</Link>
+                  <p style={{display: 'inline'}}>{post.language}</p>
+                  <p  style={{float: 'right', display: 'inline', opacity: '0.7'}}>{moment(post.createdAt).fromNow()}</p>
+                </div>
+                
+              </div>
+              
+            ))}
+            
+              </div>
+              <Link id="create"
             style={{
               outline: 'none',
              
@@ -83,35 +112,25 @@ const MyPosts = () => {
             Create Post
             
           </Link>
-          <br />
-                <br />
-                <div className="actual-post-list">
-                {userPosts &&
-            userPosts.map((post) => (
-              <div>
-                  <div className="my-post">
-                  <Link className="link-to-post" style={{display: 'block'}} to={`/snippitz/${post.id}`}>{post.title}</Link>
-                  <p style={{display: 'inline'}}>{post.language}</p>
-                  <p  style={{float: 'right', display: 'inline', opacity: '0.7'}}>{moment(post.createdAt).fromNow()}</p>
-                </div>
-                
-              </div>
-            ))}
-              </div>
                 
                
               </div>
+              <hr />
             </div>
+            
           </div>
 
 
 
         <div className="posts_container container">
         <div class="row " style={{ justifyContent: "space-evenly" }}>
-            {userPosts.length === 0 && <h1 style={{textAlign: 'center'}}>You currently have no posts</h1>}
+           
         
         </div>
         </div>
+        <br />
+        <br />
+        <br />
             
         </div>
     )

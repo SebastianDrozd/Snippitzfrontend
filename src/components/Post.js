@@ -60,7 +60,7 @@ const Post = ({
     <div className=" animate__animated animate__flipInX">
       <div
         className="blog-card"
-        style={{ maxHeight: "20em", minHeight: "20em" }}
+        style={{ maxHeight: "20em", minHeight: "15em" }}
       >
         <div className="meta">
           <div
@@ -94,7 +94,7 @@ const Post = ({
           <h1 style={{fontSize:"20px"}}>{title}</h1>
           <h2>{language}</h2>
         
-          <p style={{fontSize:"14px"}}> {description && description.substring(0,60)+ "..."}</p>
+          <p style={{fontSize:"14px"}}> {description && description.substring(0,30)+ "..."}</p>
           
           <p className="read-more">
             <a href="/home">
