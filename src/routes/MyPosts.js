@@ -86,6 +86,10 @@ const MyPosts = () => {
           <br />
                 <br />
                 <div className="actual-post-list">
+                  {userPosts.length == 0 && <div>
+                    <h1 style={{textAlign: 'center', opacity: '0.9'}}>You have no posts</h1>
+                    <br />
+                    <p style={{textAlign: 'center', opacity: '0.7'}}>Create your first post by using the button above!</p></div>}
                 {userPosts &&
             userPosts.map((post) => (
               <div>
@@ -108,7 +112,7 @@ const MyPosts = () => {
 
         <div className="posts_container container">
         <div class="row " style={{ justifyContent: "space-evenly" }}>
-            {userPosts.length === 0 && <h1 style={{textAlign: 'center'}}>You currently have no posts</h1>}
+  
         
         </div>
         </div>
