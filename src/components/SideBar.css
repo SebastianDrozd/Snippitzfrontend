@@ -1,14 +1,18 @@
 .category-container{
     margin-top: 2em;
     border-right: 1px solid #edeeff;
-    
-    height: 90%;
-    
+    color: white;
+    height: 98%;
+    background: -webkit-radial-gradient(circle, rgb(23, 70, 121) 0%, rgb(95, 14, 128) 100%);
+  
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#3684D7", endColorstr="#280635", GradientType=1 );
+    border-radius: 20px;
+ 
 }
 
 .category-list{
     list-style: none;
-    padding-left: 2em;
+    padding-left: 1.5em;
     padding-right: 2em;
     
     
@@ -16,6 +20,7 @@
 .langtitle{
     box-shadow: 0 4px 7px 3px rgba(0, 0, 0, 0.1);
     padding: .5em;
+    font-weight: bold;
 }
 .title{
     text-align: center;
@@ -29,13 +34,17 @@
     font-family: var(--font-family) !important;
     padding: .5em;
     min-width: 8em;
-    box-shadow: 0 4px 3px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px 6px rgba(0, 0, 0, 0.1);
     margin-top: 10px;
     border-radius: 10px;
     text-align: center;
+    margin-right: 1em !important;
+    transition: 0.3s;
 }
 .category-item:hover{
-    background-color:  #eeefff;
+    background-color:  rgb(60, 56, 82);;
     cursor: pointer;
+    transform: scale(1.1);
+    transition: 0.3s;
 
 }

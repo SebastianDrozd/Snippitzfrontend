@@ -39,6 +39,7 @@ a {
 .page-numbers:hover, .page-numbers.current {
   background-color: #86c023;
   color: #fff;
+  cursor: pointer;
 }
 .page-numbers.prev:hover, .page-numbers.next:hover {
   background-color: transparent;

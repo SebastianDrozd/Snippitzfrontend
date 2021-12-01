@@ -39,7 +39,7 @@ const LoginPage = () => {
     }).catch((response) => {setError(true)})
   }
     return (
-      <div id="formClass" style={{padding: 200}}>
+      <div className="login-wrapper" id="formClass" style={{padding: '1em'}}>
              <form class="form-signin"style={{
           boxShadow: "0 3px 10px 6px rgba(0, 0, 0, 0.1)",
           padding: "3em",

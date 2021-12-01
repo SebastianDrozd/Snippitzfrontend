@@ -36,3 +36,10 @@
 .outer{
   z-index: 100;
 }
+
+@media screen and (max-width: 550px) {
+  .yo{
+    border: 40px solid rgb(13, 6, 55);
+  }
+  
+}

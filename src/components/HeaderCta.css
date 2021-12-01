@@ -1,0 +1,44 @@
+@media screen and (max-width: 550px) {
+  .cta-outer-container{
+      flex-direction: column;
+  }
+  .cta-inner-container{
+      padding: 0em !important;
+  }
+  .cta-second-inner-container{
+      flex-direction: column;
+  }
+  .cta-img{
+     width: 20em !important;
+     margin-left: 3em;
+     margin-bottom: 2em;
+     margin-top: -3em !important;
+  }
+  .cta-second-inner-container{
+    
+    border-radius: 20px;
+    width: 100% !important;
+    margin-left: 0em !important;
+    
+ 
+}
+.cta-category-item{
+    margin-left: 1.5em !important;
+    margin-bottom: 2em !important;
+}
+}
+
+
+.home-message{
+    font-size: 26px !important;
+}
+.cta-second-inner-container{
+    background: -webkit-radial-gradient(circle, rgb(23, 70, 121) 0%, rgb(95, 14, 128) 100%);
+    padding: 4em;
+    color: white;
+    border-radius: 20px;
+    width: 90%;
+    margin-left: 5%;
+  
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#3684D7", endColorstr="#280635", GradientType=1 );
+}

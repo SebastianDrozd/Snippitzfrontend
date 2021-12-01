@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { useSelector } from "react-redux";
 import { savePost } from "./connections/Requests";
 import "./CreatePostContent.css";
@@ -17,6 +17,15 @@ const CreatePostContent = () => {
   const [code, setCode] = useState("");
   const [titleBlank,setTitleBlank] = useState(false)
   const [languageBlank, setLanguageBlank] = useState(false)
+
+  useEffect(() => {
+    const elem = document.getElementById("yoyo");
+    if (elem) {
+      elem.scrollIntoView({behavior: 'smooth'});
+    }
+  }, []);
+
+
   const handleSubmit = (e) => {
     e.preventDefault()
     if(title.length == 0 || language.length == 0 || description == 0 || code == 0){
@@ -59,7 +68,7 @@ const CreatePostContent = () => {
       <div className="content2 " style={{ }}>
         <br />
         <div style={{ display: "flex", justifyContent:'space-evenly' }}>
-          <h1 className="title">Create A Snippit</h1>
+          <h1 id="yoyo" className="title">Create A Snippit</h1>
           <img src={panel} height="200" width="250" alt="" />
         </div>
         

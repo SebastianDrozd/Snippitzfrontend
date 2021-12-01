@@ -1,0 +1,12 @@
+.login-wrapper{
+    width: 50% !important;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3em;
+    background: -webkit-radial-gradient(circle, rgb(23, 70, 121) 0%, rgb(95, 14, 128) 100%);
+    
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#3684D7", endColorstr="#280635", GradientType=1 );
+    border-radius: 20px;
+    color: white;
+  
+  }

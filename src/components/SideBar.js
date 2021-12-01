@@ -4,6 +4,7 @@ import "./SideBar.css";
 import { useDispatch } from "react-redux";
 import { setPosts, setSortChoice } from "../redux/slices/postSlice";
 import java from '../assets/java.jpg'
+import programming from '../assets/programming.svg'
 const SideBar = () => {
   const dispatch = useDispatch();
 
@@ -18,21 +19,17 @@ const SideBar = () => {
   };
   return (
     <div className="category-container" style={{ padding: "1em" }}>
-     
-      
-     
-
       <img
-        src={process.env.PUBLIC_URL + `../images/pair.png`}
+        src={programming}
         width="150"
         height="100"
         alt="Image1"
-        style={{ marginBottom:'4em', paddingTop: 0, display: "inline" }}
+        style={{ marginBottom:'0em',  display: "inline",marginTop: '3em',marginLeft: '1em' }}
       ></img>
 
       <br />
     <br />
-      <p className="langtitle">Languages: </p>
+      <p className="langtitle">Languages  <i style={{marginLeft: '1em'}} class="fa fa-code" aria-hidden="true"> </i> </p>
       <ul className="category-list">
         <li onClick={handleClick} value="Java" className="category-item">
           Java

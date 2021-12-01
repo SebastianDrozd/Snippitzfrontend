@@ -56,7 +56,8 @@ const Signup = (props) => {
   return (
     <div
       id="formClass"
-      style={{ paddingLeft: 200, paddingRight: 200, paddingTop: "3em" }}
+      className="login-wrapper"
+      
     >
       <form
         class="form-signin"
@@ -160,9 +161,8 @@ const Signup = (props) => {
         <br />
         <br />
       </form>
-      <br />
-      <br />
-      <hr />
+    
+     
     </div>
   );
 };

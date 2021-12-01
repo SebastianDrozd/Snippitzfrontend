@@ -35,7 +35,7 @@ const MyPosts = () => {
           
           <br />
           <br />
-          <div style={{display: 'flex', justifyContent: 'space-evenly'}}>
+          <div className="main-outer-container-my-posts" style={{display: 'flex', justifyContent: 'space-evenly'}}>
             <div id='yoyo' style={{display: 'flex', flexDirection: 'column',justifyContent:'space-evenly',justifyContent: 'flex-start'}}>
               <div className="profile-card">
                 <div className="profile-image" style={{display: 'flex', flexDirection: "column", justifyContent: 'space-evenly',alignItems:'center'}}>

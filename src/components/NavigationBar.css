@@ -33,3 +33,55 @@ nav{
 
     z-index: 10; /* If you delete this line, your menu link won't be clicked because it is behind the background. Applying this code bring the menu in front of the background */
   }
+
+  .hamburger{
+        display: none;
+  }
+
+  .hidden-links{
+      display: none;
+  }
+  @media screen and (max-width: 550px) {
+    .hidden-links{
+        display:block;
+        text-align: center;
+        transition: 0.3s;
+        width: 50%;
+        margin-left: auto;
+        margin-right:auto;
+    }
+    .actual-links{
+        text-align: center  !important;
+    }
+    .hidden-links-p{
+        text-align: center !important;
+        margin: 1.5em;
+    }
+      .navbar{
+          padding-top: 3em;
+      }
+      .links{
+          display: none;
+      }
+    .hamburger{
+        display: inline;
+        padding-right: 2em;
+        padding-top: 1em;
+        cursor: pointer;
+  }
+    .gpt3__navbar {
+        padding: 2rem;
+    }
+
+    .gpt3__navbar-sign {
+        display: none;
+    }
+
+    .gpt3__navbar-menu_container {
+        top: 20px;
+    }
+
+    .gpt3__navbar-menu_container-links-sign {
+        display: block;
+    }
+}

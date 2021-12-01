@@ -6,7 +6,7 @@ import Banner from "./Banner";
 import { getAllPosts } from "./connections/Requests";
 import Pagination from "./Pagination";
 import Post from "./Post";
-import tech from '../assets/tech.jpg'
+import tech from "../assets/tech.jpg";
 import "./PostListView.css";
 import SearchBar from "./SearchBar";
 import office from "../assets/office.svg";
@@ -15,6 +15,8 @@ import design from "../assets/design.svg";
 import discuss from "../assets/discuss.svg";
 import HeaderCta from "./HeaderCta";
 import SideBar from "./SideBar";
+import robot from "../assets/robot.png";
+import post from "../assets/post.svg";
 export const PostListView = ({ posts }) => {
   const dispatch = useDispatch();
   const loggedIn = useSelector((state) => state.user.loggedIn);
@@ -30,57 +32,93 @@ export const PostListView = ({ posts }) => {
       <HeaderCta />
       <br />
       <br />
-      <div style={{display: 'flex',justifyContent: 'space-evenly',alignItems: 'center'}}>
-      <div className="" style={{paddingLeft: '6em'}}>
-            <img src={tech} width="600" height="400" style={{borderRadius: '20px'}}  alt="" />
-          </div>
-          <div style={{marginLeft:'2em'}}>
-            <h2 style={{color: "rgb(102, 133, 255)"}}>Share all your best moments with your friends</h2>
-            <br />
-            <p style={{opacity:0.7}}>sfas lkajs lkahs lfkha slk halksf ahlks fhalks hflkashf akhs fklah sflka hsklfh askfha skfh  lkhf alsk f k sfalks fh</p>
-          </div>
+      <div
+        className="outer-container"
+        style={{
+          display: "flex",
+          justifyContent: "space-evenly",
+          alignItems: "center",
+        }}
+      >
+        <div className="header-image-container" style={{ paddingLeft: "6em" }}>
+          <img
+            src={tech}
+            width="600"
+            height="400"
+            style={{ borderRadius: "20px" }}
+            alt=""
+          />
+        </div>
+        <div style={{ marginLeft: "2em" }}>
+          <h2 style={{ color: "rgb(102, 133, 255)" }}>
+            Share all your best moments with your friends
+          </h2>
+          <br />
+          <p style={{ opacity: 0.7 }}>
+            sfas lkajs lkahs lfkha slk halksf ahlks fhalks hflkashf akhs fklah
+            sflka hsklfh askfha skfh lkhf alsk f k sfalks fh
+          </p>
+          <p style={{ opacity: 0.7 }}>
+            sfas lkajs lkahs lfkha slk halksf ahlks fhalks hflkashf akhs fklah
+            sflka hsklfh askfha skfh lkhf alsk f k sfalks fh
+          </p>
+          <p style={{ opacity: 0.7 }}>
+            Lorem ipsum c incididunt ut labore et dolore magna aliqua. Nec
+            tincidunt praesent semper feugiat. Bibendum enim facilisis gravida
+            neque convallis. Ac tincidunt vitae semper quis lectus nulla. Quis
+            vel eros donec ac
+          </p>
+        </div>
       </div>
       <br />
       <br />
-      
+
       <br />
-      <hr style={{ marginLeft: "3em" ,width: '75%', marginLeft: 'auto',marginRight: 'auto', color: 'rgb(170, 170, 170)'}} />
+      <hr
+        style={{
+          marginLeft: "3em",
+          width: "75%",
+          marginLeft: "auto",
+          marginRight: "auto",
+          color: "rgb(170, 170, 170)",
+        }}
+      />
       <br />
       <div class="row" style={{ padding: "1em" }}>
-        <div class="col-2">
+        <div class="col-2 sidebar">
           <SideBar />
         </div>
         <div class="col-9">
-       
-      <br />
-       
+          <br />
+          <div style={{ padding: "1em" }}>
+            <img className="post-img" src={post} alt="" />
+          </div>
 
-          <div style={{ display: "flex", justifyContent: "space-evenly" }}>
-            <div style={{ float: "left", marginLeft: "3em" }}>
-              <select
-                class="form-select"
-                style={{ display: "inline", float: "" }}
-                id="cars"
-              >
+          <div
+            className="helpers-wrap"
+            style={{
+              display: "flex",
+              justifyContent: "space-evenly",
+              alignItems: "center",
+            }}
+          >
+            <div className="helper-buttons">
+              <select class="form-select">
                 <option value="volvo">Sort By</option>
                 <option value="saab">Date Created</option>
+                <option value="saab">A-Z</option>
               </select>
             </div>
-            <SearchBar />
+
             {loggedIn === true && (
               <>
                 <Link
+                className="helper-buttons"
                   id="create"
                   style={{
-                    float: "right",
-                    padding: "12em",
-                    textAlign: "center",
                     color: "white",
-                    marginLeft: "1em",
                     padding: 10,
-                    borderRadius: 20,
-                    height: "40px",
-                    fontWeight: "bold",
+                    borderRadius: 5,
                     backgroundColor: "rgb(102, 133, 255)",
                   }}
                   to="/create"
@@ -92,16 +130,14 @@ export const PostListView = ({ posts }) => {
             {loggedIn === true && (
               <>
                 <Link
+                className="helper-buttons"
                   id="create"
                   style={{
-                    float: "right",
-                    padding: "12em",
-                    textAlign: "center",
                     color: "white",
-                    marginLeft: "1em",
+
                     padding: 8,
-                    borderRadius: 20,
-                    height: "40px",
+                    borderRadius: 5,
+
                     paddingLeft: "1em",
                     paddingRight: "1em",
 
@@ -115,14 +151,14 @@ export const PostListView = ({ posts }) => {
               </>
             )}
           </div>
+
           <br />
-        
           <div
             style={{ marginLeft: "2em", paddingTop: "1em" }}
             class="container-fluid"
           >
             {sortChoice}
-            <div class="row " style={{ justifyContent: "space-evenly" }}>
+            <div class="row post-list-wrapper" style={{ justifyContent: "space-evenly" }}>
               {posts.length === 0 ? (
                 <h3 style={{ textAlign: "center" }}>
                   There are no posts to display{" "}

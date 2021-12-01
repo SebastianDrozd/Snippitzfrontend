@@ -26,7 +26,12 @@ const SinglePost = () => {
   const comments = useSelector((state) => state.posts.comments);
   const [post, setPost] = useState({});
   const id = useParams();
-
+  useEffect(() => {
+    const elem = document.getElementById("yoyo");
+    if (elem) {
+      elem.scrollIntoView({behavior: 'smooth'});
+    }
+  }, []);
   const [description, setDescription] = useState("");
   const [code, setCode] = useState("");
   const username = useSelector((state) => state.user.username);
@@ -171,7 +176,7 @@ const SinglePost = () => {
         <div className="header-color"></div>
         <div style={{ display: "flex" }}>
           <div style={{ width: "50%" }}>
-            <h3
+            <h3 id ="yoyo"
               style={{
                 borderBottom: "1px solid grey",
                 padding: 10,

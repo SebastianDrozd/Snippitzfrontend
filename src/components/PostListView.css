@@ -175,3 +175,76 @@ body{
       .custom-option.selection {
         background: #f9f9f9;
       }
+
+
+      @media screen and (max-width: 550px) {
+            .sidebar{
+              display: none;
+            }
+            .outer-container{
+              flex-direction: column;
+            }
+            .robot-image {
+              width: 60%;
+              margin-right: auto;
+              margin-left: 10%;
+             height: 10em !important;
+              border-radius: 20px;
+              margin-bottom: 2em;
+            }
+            .header-image-container{
+              
+              padding-left: 0em !important;
+            }
+            .header-image-container img{
+              width: 24em !important;
+              height: 15em;
+           
+            }
+            .post-list-wrapper{
+              flex-direction: column;
+            }
+            .helpers-wrap{
+     
+              padding: 0em !important;
+              margin-left: 0em !important;
+              border-radius: 10px;
+              margin-left: 4em !important;
+            }
+            .helper-buttons{
+              margin-right: 1em !important;
+            }
+      }
+
+
+      .robot-image {
+        width: 80%;
+        margin-right: auto;
+        margin-left: 10%;
+        height: 34em;
+        border-radius: 20px;
+      }
+
+      .post-img{
+        width: 50%;
+        height: 12em;
+        margin-left: 35%;
+        margin-right: auto;
+        margin-bottom: 3em;
+      }
+
+      #create:hover{
+          transform: scale(1.1);
+          transition: 0.3s;
+      }
+
+      .helpers-wrap{
+     
+        padding: 1.5em;
+        margin-left: 5em;
+        border-radius: 10px;
+      }
+      .helper-buttons{
+       width: 10em;
+       text-align: center;
+      }

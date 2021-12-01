@@ -18,13 +18,18 @@ body {
   background: #fff;
   line-height: 1.4;
   font-family: sans-serif;
-  border-radius: 20px;
+  border-radius: 10px;
   overflow: hidden;
   z-index: 0;
   width: 12em;
 
-  margin-left: 1em;
+  margin-left: 3em;
   max-height: 2em !important;
+  transition:0.3s;
+}
+.blog-card:hover{
+  transform: scale(1.1);
+    transition:0.3s;
 }
 .blog-card a {
   color: inherit;
@@ -194,5 +199,11 @@ body {
   }
   .blog-card.alt .details {
     padding-left: 25px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .blog-card{
+    width: 18em !important;
+    margin-left: 0em !important;
   }
 }
