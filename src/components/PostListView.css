@@ -228,9 +228,9 @@ body{
       .post-img{
         width: 50%;
         height: 12em;
-        margin-left: 35%;
+        margin-left: 30%;
         margin-right: auto;
-        margin-bottom: 3em;
+        margin-bottom: 0em;
       }
 
       #create:hover{
@@ -240,11 +240,18 @@ body{
 
       .helpers-wrap{
      
-        padding: 1.5em;
-        margin-left: 5em;
+        padding: 1em;
+        margin-left: 0em;
         border-radius: 10px;
       }
       .helper-buttons{
        width: 10em;
        text-align: center;
+      }
+      .header-outline{
+        box-shadow: 0 3px 10px 6px rgba(0, 0, 0, 0.1);
+       border-radius: 10px;
+        width: 80%;
+        margin-left: 13%;
+        margin-right: auto;
       }

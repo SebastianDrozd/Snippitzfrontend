@@ -21,3 +21,19 @@
     margin-left: 2em;
     min-width: 9.5em ;
 }
+
+@media screen and (max-width: 550px) {
+    
+    .content{
+        margin-left: 0em !important;
+        width: 22em !important;
+        display: flex;
+        flex-direction: column;
+    }
+    .infos{
+        flex-direction: column;
+    }
+    .single-post-image{
+        display: none;
+    }
+}

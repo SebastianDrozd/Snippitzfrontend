@@ -7,14 +7,17 @@ import post from  '../assets/post.png'
 import like from '../assets/like.png'
 import { Link,useNavigate } from 'react-router-dom'
 import moment from "moment";
-import { getUser } from '../components/connections/Requests'
+import { getPostsByAuthor, getUser } from '../components/connections/Requests'
 const MyPosts = () => {
   const navigate = useNavigate()
     const username = useSelector(state=> state.user.username)
-    const posts = useSelector(state => state.posts.posts)
+    const [posts,setPosts] = useState([])
     const userPosts = posts.filter(post => post.author === username)
     const [user, setUser] = useState({})
     useEffect(() => {
+      getPostsByAuthor(username).then(response => {
+        setPosts(response.data)
+      } )
       console.log("username", username)
       console.log("posts",posts)
       const elem = document.getElementById("yoyo");
@@ -23,6 +26,7 @@ const MyPosts = () => {
       }
       getUser(username).then(reponse => {
             setUser(reponse.data)
+            
       })
     },[])
     const handleGoHome = () => {

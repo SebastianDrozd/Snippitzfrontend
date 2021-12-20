@@ -46,6 +46,7 @@ const LoginPage = () => {
           borderRadius: "20px",
         }}>
       <img
+          className="image-kneeling"
           id="yoyo"
           style={{ marginLeft: "7em" }}
           class="mb-4"

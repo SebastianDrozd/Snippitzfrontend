@@ -25,7 +25,7 @@ const NavigationBar = () => {
                 <div className="links">
                     <ul className="nav-links">
                         <li className="link-item"> <Link className="links" to="/home"> Home</Link></li>
-                        <li className="link-item"> <Link className="links" to="/home"> About</Link></li>
+                        <li className="link-item"> <a style={{color: 'black'}} href="#about2">About</a></li>
                        {loggedIn && <li className="link-item"> <Link className="links" to="/myposts">My posts</Link></li> } 
                         
                         {loggedIn === true ?  <li className="link-item" onClick={handleLogout}>Log out</li> : "" }

@@ -1,9 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { setPosts } from "../redux/slices/postSlice";
+import { setPosts, setSortChoice } from "../redux/slices/postSlice";
 import Banner from "./Banner";
-import { getAllPosts } from "./connections/Requests";
+import { getAllPosts, getPostQueryable } from "./connections/Requests";
 import Pagination from "./Pagination";
 import Post from "./Post";
 import tech from "../assets/tech.jpg";
@@ -17,15 +17,29 @@ import HeaderCta from "./HeaderCta";
 import SideBar from "./SideBar";
 import robot from "../assets/robot.png";
 import post from "../assets/post.svg";
+import { Parallax } from 'react-parallax';
 export const PostListView = ({ posts }) => {
   const dispatch = useDispatch();
   const loggedIn = useSelector((state) => state.user.loggedIn);
   const sortChoice = useSelector((state) => state.posts.sortChoice);
+  const [sortStringChoice,setSortStringChoice] = useState("")
   useEffect(() => {
     getAllPosts().then((response) => {
       dispatch(setPosts(response.data));
     });
   }, [dispatch]);
+
+  const handleSortChoice = (e) => {
+    var choice = e.target.value;
+      console.log(choice)
+    if(choice == "Date Created"){
+      getPostQueryable("createdAt").then(response => dispatch(setPosts(response.data)))
+    }
+    else if(choice == "A-Z"){
+      //handle alphabetically
+      getPostQueryable("title").then(response => dispatch(setPosts(response.data)))
+    }
+  }
   return (
     <div className="main-container">
       <br />
@@ -89,10 +103,22 @@ export const PostListView = ({ posts }) => {
           <SideBar />
         </div>
         <div class="col-9">
+          <div className="header-outline">
           <br />
           <div style={{ padding: "1em" }}>
             <img className="post-img" src={post} alt="" />
+            <hr
+        style={{
+          marginLeft: "3em",
+          width: "75%",
+          marginLeft: "auto",
+          marginRight: "auto",
+          color: "rgb(170, 170, 170)",
+        }}
+      />
+
           </div>
+        {!loggedIn &&  <h4 style={{textAlign: 'center',opacity: '0.8',fontWeight: 'bold'}}>Create an account today to make your first post!</h4>}  
 
           <div
             className="helpers-wrap"
@@ -103,10 +129,10 @@ export const PostListView = ({ posts }) => {
             }}
           >
             <div className="helper-buttons">
-              <select class="form-select">
+              <select  onChange={handleSortChoice} class="form-select">
                 <option value="volvo">Sort By</option>
-                <option value="saab">Date Created</option>
-                <option value="saab">A-Z</option>
+                <option value="Date Created">Date Created</option>
+                <option value="A-Z">A-Z</option>
               </select>
             </div>
 
@@ -153,12 +179,14 @@ export const PostListView = ({ posts }) => {
           </div>
 
           <br />
+          </div>
+          <br />
           <div
             style={{ marginLeft: "2em", paddingTop: "1em" }}
             class="container-fluid"
           >
             {sortChoice}
-            <div class="row post-list-wrapper" style={{ justifyContent: "space-evenly" }}>
+            <div id="yoyo2" class="row post-list-wrapper" style={{ justifyContent: "space-evenly" }}>
               {posts.length === 0 ? (
                 <h3 style={{ textAlign: "center" }}>
                   There are no posts to display{" "}
@@ -168,7 +196,7 @@ export const PostListView = ({ posts }) => {
               )}
               {posts &&
                 posts.map((post) => (
-                  <div class="col-3" style={{ marginLeft: 0, marginTop: 20 }}>
+                  <div class="col-6" style={{ marginLeft: 0, marginTop: 20 }}>
                     <Post
                       title={post.title}
                       language={post.language}

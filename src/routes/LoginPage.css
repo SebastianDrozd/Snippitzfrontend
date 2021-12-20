@@ -34,3 +34,13 @@
   color: white;
 
 }
+
+@media screen and (max-width: 550px) {
+    
+  .login-wrapper{
+    width: 22em !important;
+  }
+  .image-kneeling{
+    margin-left: 1em !important;
+  }
+}

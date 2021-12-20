@@ -60,7 +60,7 @@ const Post = ({
     <div className=" animate__animated animate__flipInX">
       <div
         className="blog-card"
-        style={{ maxHeight: "20em", minHeight: "15em" }}
+        style={{ maxHeight: "20em", minHeight: "20em" }}
       >
         <div className="meta">
           <div
@@ -72,29 +72,14 @@ const Post = ({
               <a href="/home">{author}</a>
             </li>
             <li className="date">{moment(createdAt).fromNow()}</li>
-            <li className="tags">
-              <ul>
-                <li>
-                  <a href="/home">Learn</a>
-                </li>
-                <li>
-                  <a href="/home">Code</a>
-                </li>
-                <li>
-                  <a href="/home">HTML</a>
-                </li>
-                <li>
-                  <a href="/home">CSS</a>
-                </li>
-              </ul>
-            </li>
+            
           </ul>
         </div>
         <div className="description">
           <h1 style={{fontSize:"20px"}}>{title}</h1>
           <h2>{language}</h2>
         
-          <p style={{fontSize:"14px"}}> {description && description.substring(0,30)+ "..."}</p>
+          <p style={{fontSize:"14px"}}> {description && description.substring(0,200)+ ".."}</p>
           
           <p className="read-more">
             <a href="/home">

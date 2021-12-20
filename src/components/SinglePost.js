@@ -85,7 +85,7 @@ const SinglePost = () => {
     
     <div>
       <div class="row" style={{ padding: "1em" }}>
-        <div class="col-2">
+        <div class="col-2 sidebar">
           <SideBar />
           
         </div>
@@ -187,7 +187,7 @@ const SinglePost = () => {
             </h3>
             <br />
             <br />
-            <div style={{display: 'flex',justifyContent:'space-evenly'}}>
+            <div className="infos" style={{display: 'flex',justifyContent:'space-evenly'}}>
             <div className="wrap" style={{display: 'flex',alignItems: 'center',justifyContent: 'space-evenly',width: '10em'}}>
               <div style={{display: 'flex', flexDirection:'column',alignItems: 'center',justifyContent: 'space-evenly'}}>
               <h3>
@@ -245,6 +245,7 @@ const SinglePost = () => {
           </div>
           <div style={{ width: "45%" }}>
             <img
+            className="single-post-image"
               src={design}
               width="350"
               height="400"
@@ -253,6 +254,7 @@ const SinglePost = () => {
             ></img>
             <img
               src={proto}
+              className="single-post-image"
               width="225"
               height="200"
               alt="Image1"

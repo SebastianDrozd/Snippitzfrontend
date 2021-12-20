@@ -10,3 +10,13 @@
     color: white;
   
   }
+  
+@media screen and (max-width: 550px) {
+    
+  .login-wrapper{
+    width: 22em !important;
+  }
+  .image-login-wrapper{
+    width: 10em !important;
+  }
+}

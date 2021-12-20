@@ -31,3 +31,16 @@ form{
 .elevation-cover{
     box-shadow: 0 3px 10px 6px rgba(0, 0, 0, 0.1);
 }
+@media screen and (max-width: 550px) {
+    
+    .content2{
+        display: flex;
+        flex-direction: column;
+        margin-left: -2em !important;
+        width: 25em;
+        padding: 2em;
+    }
+    #inputAddress{
+        width: 20em;
+    }
+}

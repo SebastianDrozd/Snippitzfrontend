@@ -17,6 +17,18 @@
    margin-left: 2em !important;
   
 }
+@media screen and (max-width: 550px) {
+    
+   .comments-section{
+      width: 25em !important ;
+      margin-left: 0em !important;
+     
+   }
+   .comments-container {
+      margin: 0;
+      width: 15em;
+   }
+ }
 
 a {
     color: #03658c;

@@ -68,6 +68,7 @@ const Signup = (props) => {
         }}
       >
         <img
+        className="image-login-wrapper"
           id="yoyo"
           style={{ marginLeft: "7em" }}
           class="mb-4"

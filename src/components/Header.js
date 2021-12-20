@@ -9,6 +9,7 @@ const Header = () => {
   const loggedIn = useSelector((state) => state.user.loggedIn);
   const handleLogin = () => {
     if (loggedIn) {
+      navigate("/create")
     } else {
       navigate("/login");
       window.location.reload();
@@ -16,6 +17,10 @@ const Header = () => {
   };
   const handleSignup = () => {
     if (loggedIn) {
+      const elem = document.getElementById("yoyo2");
+    if (elem) {
+      elem.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
     } else {
       navigate("/signup");
       window.location.reload();

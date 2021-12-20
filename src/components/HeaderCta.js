@@ -6,14 +6,16 @@ import discuss from '../assets/discuss.svg'
 import tech from '../assets/tech.jpg'
 import robot from'../assets/robot.png'
 import './HeaderCta.css'
+import { Parallax } from 'react-parallax';
 const HeaderCta = () => {
     return (
         <div>
-          <div>
-        <img className="robot-image" src={robot} alt="" />
-      </div>
+           <Parallax blur={1} bgImage={robot} className="robot-image" bgImageAlt="the cat" strength={200}>
+        
+    </Parallax>
+        
               <div className="cta-outer-container" style={{display: 'flex', alignItems: 'center',justifyContent: 'space-evenly'}}>
-        <div className="cta-inner-container" style={{display: 'flex', flexDirection: 'column',padding: '5em'}}>
+        <div id="about2" className="cta-inner-container" style={{display: 'flex', flexDirection: 'column',padding: '5em'}}>
       <p className="home-message">Check out the newest coolest posts by users just like you!</p>
       <p className="second-home-message" style={{opacity: '0.5'}}>Lorem ipsum c incididunt ut labore et dolore magna aliqua. Nec tincidunt praesent semper feugiat. Bibendum enim facilisis gravida neque convallis. Ac tincidunt vitae semper quis lectus nulla. Quis vel eros donec ac.</p>
       <p className="second-home-message" style={{opacity: '0.5'}}>Create, post, save ,edit all your favorite code snippitz. At Snippitz.IO, keep all your favorite functions together in one place for world to see! </p>
@@ -22,7 +24,10 @@ const HeaderCta = () => {
       </div>
       <img className="cta-img" src={office} height="400" width="350" alt="" />
       </div>
-     
+      <div>
+      <Parallax blur={1}  bgImageAlt="the cat" strength={200}>
+        
+    
       <div className="cta-second-inner-container" style={{display: 'flex', justifyContent: 'space-evenly',paddingLeft: '2em',paddingRight: '2em'}}>
         <div className="cta-category-item" style={{display: 'flex', flexDirection: 'column',alignItems:'center'}}>
           <h4 className="cta-header">Create</h4>
@@ -40,7 +45,8 @@ const HeaderCta = () => {
         <img src={discuss} height="150" width="150" alt="" />
         </div>
       </div>
-    
+    </Parallax>
+    </div>
       <br />
       <br />
       <br />
